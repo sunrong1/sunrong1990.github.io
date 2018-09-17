@@ -319,7 +319,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://sunrong.site/2018/09/06/Hexo 我的创建实践总结/">
+    <link itemprop="mainEntityOfPage" href="http://sunrong.site/2018/09/17/Hexo建站实践总结/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Dave Sun">
@@ -338,8 +338,8 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/09/06/Hexo 我的创建实践总结/" itemprop="url">
-                  Hello,Hexo
+                <a class="post-title-link" href="/2018/09/17/Hexo建站实践总结/" itemprop="url">
+                  Hexo建站实践总结
                 </a>
               
             
@@ -365,24 +365,12 @@
                 
               
 
-              <time title="Created: 2018-09-06 22:41:20" itemprop="dateCreated datePublished" datetime="2018-09-06T22:41:20+08:00">2018-09-06</time>
+              <time title="Created: 2018-09-17 22:41:20 / Modified: 23:09:18" itemprop="dateCreated datePublished" datetime="2018-09-17T22:41:20+08:00">2018-09-17</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2018-09-10 22:36:09" itemprop="dateModified" datetime="2018-09-10T22:36:09+08:00">2018-09-10</time>
               
             
           </span>
@@ -399,7 +387,7 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/基础/" itemprop="url" rel="index"><span itemprop="name">基础</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/hexo/" itemprop="url" rel="index"><span itemprop="name">hexo</span></a></span>
 
                 
                 
@@ -414,8 +402,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/09/06/Hexo 我的创建实践总结/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">Comments: </span> <span class="post-comments-count valine-comment-count" data-xid="/2018/09/06/Hexo 我的创建实践总结/" itemprop="commentCount"></span>
+                <a href="/2018/09/17/Hexo建站实践总结/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">Comments: </span> <span class="post-comments-count valine-comment-count" data-xid="/2018/09/17/Hexo建站实践总结/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -445,7 +433,28 @@
       
         
           
-            
+            <h2 id="hexo博客建立，涉及工具基础"><a href="#hexo博客建立，涉及工具基础" class="headerlink" title="hexo博客建立，涉及工具基础"></a>hexo博客建立，涉及工具基础</h2><ul>
+<li><p>git <em>版本管理</em></p>
+</li>
+<li><p>github page <em>网站发布仓库</em></p>
+</li>
+<li><p>node.js 包（附带NPM包管理） <em>HEXO底层驱动</em></p>
+</li>
+<li><p>hexo博客框架包 </p>
+</li>
+<li><p>next主题 <em>网站美化辅助</em></p>
+</li>
+<li><p>yu writer程序 <em>makedown文件编辑辅助</em></p>
+</li>
+</ul>
+<h2 id="实践过程知识点"><a href="#实践过程知识点" class="headerlink" title="实践过程知识点"></a>实践过程知识点</h2><h3 id="0-安装过程总结"><a href="#0-安装过程总结" class="headerlink" title="0. 安装过程总结"></a>0. 安装过程总结</h3><p>总体安装过程不是非常顺利。node.js 、git、github page网站仓库的建立非常简单，简单操作下就可以。Yu writer是绿色版本，不需要安装即可。npm 安装hexo也比较简单，但是初始化<code>hexo init</code>的时候，过程比较慢，需要下载依赖，可能要多试几次。<br>next主题安装的时候，一直报不再维护的告警，后来发现next主题库搬迁，搬到新地址，又重新下载安装了next主题库<code>git clone git@github.com:theme-next/hexo-theme-next.git next</code>。</p>
+<h3 id="1-hexo博客基础，基本操作命令，基本配置"><a href="#1-hexo博客基础，基本操作命令，基本配置" class="headerlink" title="1. hexo博客基础，基本操作命令，基本配置"></a>1. hexo博客基础，基本操作命令，基本配置</h3><p>hexo源码同步在 <a href="https://github.com/hexojs/hexo" target="_blank" rel="noopener">Hexo_github</a>上。</p>
+<h3 id="2-yml文件结构和配置"><a href="#2-yml文件结构和配置" class="headerlink" title="2.yml文件结构和配置"></a>2.yml文件结构和配置</h3><p><a href="https://blog.csdn.net/beginya/article/details/76768968" target="_blank" rel="noopener">YAML文件简介</a> 这个文件基本介绍的很好，我也不Copy了。</p>
+<blockquote>
+<p>语法：<br>I.使用空格 Space 缩进表示分层，不同层次之间的缩进可以使用不同的空格数目，但是同层元素一定左对齐，即前面空格数目相同（不能使用 Tab，各个系统 Tab对应的 Space 数目可能不同，导致层次混乱）;<br>II.‘#’表示注释，只能单行注释，从#开始处到行尾;<br>III. 破折号后面跟一个空格（a dash and space）表示列表;<br>IV. 用冒号和空格表示键值对 key: value；<br>V.简单数据（scalars，标量数据）可以不使用引号括起来，包括字符串数据。用单引号或者双引号括起来的被当作字符串数据，在单引号或双引号中使用C风格的转义字符；</p>
+</blockquote>
+<p><strong>简单说</strong>：就是一种相对简单的标记语言，使用空格和缩进表示分层，同一元素一定左对齐。</p>
+<h3 id="3-ssh通信基础-git免密上传）"><a href="#3-ssh通信基础-git免密上传）" class="headerlink" title="3.ssh通信基础 (git免密上传）"></a>3.ssh通信基础 (git免密上传）</h3><h3 id="4-域名重定向原理"><a href="#4-域名重定向原理" class="headerlink" title="4.域名重定向原理"></a>4.域名重定向原理</h3><h3 id="5-makedown文件的基础语法-yu-write基本使用"><a href="#5-makedown文件的基础语法-yu-write基本使用" class="headerlink" title="5.makedown文件的基础语法 yu write基本使用"></a>5.makedown文件的基础语法 yu write基本使用</h3><h3 id="6-git的基本命令"><a href="#6-git的基本命令" class="headerlink" title="6.git的基本命令"></a>6.git的基本命令</h3><h3 id="7-网站运营辅助工具"><a href="#7-网站运营辅助工具" class="headerlink" title="7.网站运营辅助工具"></a>7.网站运营辅助工具</h3>
           
         
       
@@ -716,9 +725,7 @@
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-count">2</span>
                     <span class="site-state-item-name">tags</span>
                   
                 </div>
