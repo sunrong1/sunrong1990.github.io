@@ -115,7 +115,7 @@
 <meta property="og:description" content="hexo博客建立，涉及工具基础 git 版本管理  github page 网站发布仓库  node.js 包（附带NPM包管理） HEXO底层驱动  hexo博客框架包   next主题 网站美化辅助  yu writer程序 makedown文件编辑辅助   实践过程知识点0. 安装过程总结总体安装过程不是非常顺利。node.js 、git、github page网站仓库的建立非常简单，简单操">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://s1.51cto.com/images/20180131/1517395436837583.png?x-oss-process=image/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_100,g_se,x_10,y_10,shadow_90,type_ZmFuZ3poZW5naGVpdGk=">
-<meta property="og:updated_time" content="2018-09-21T16:17:54.408Z">
+<meta property="og:updated_time" content="2018-09-22T00:37:33.345Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo建站实践总结">
 <meta name="twitter:description" content="hexo博客建立，涉及工具基础 git 版本管理  github page 网站发布仓库  node.js 包（附带NPM包管理） HEXO底层驱动  hexo博客框架包   next主题 网站美化辅助  yu writer程序 makedown文件编辑辅助   实践过程知识点0. 安装过程总结总体安装过程不是非常顺利。node.js 、git、github page网站仓库的建立非常简单，简单操">
@@ -384,7 +384,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-09-22 00:17:54" itemprop="dateModified" datetime="2018-09-22T00:17:54+08:00">2018-09-22</time>
+                <time title="Modified: 2018-09-22 08:37:33" itemprop="dateModified" datetime="2018-09-22T08:37:33+08:00">2018-09-22</time>
               
             
           </span>
@@ -469,6 +469,7 @@
 </ul>
 <h2 id="实践过程知识点"><a href="#实践过程知识点" class="headerlink" title="实践过程知识点"></a>实践过程知识点</h2><h3 id="0-安装过程总结"><a href="#0-安装过程总结" class="headerlink" title="0. 安装过程总结"></a>0. 安装过程总结</h3><p>总体安装过程不是非常顺利。node.js 、git、github page网站仓库的建立非常简单，简单操作下就可以。Yu writer是绿色版本，不需要安装即可。npm 安装hexo也比较简单，但是初始化<code>hexo init</code>的时候，过程比较慢，需要下载依赖，可能要多试几次。<br>next主题安装的时候，一直报不再维护的告警，后来发现next主题库搬迁，搬到新地址，又重新下载安装了next主题库<code>git clone git@github.com:theme-next/hexo-theme-next.git next</code>。</p>
 <h3 id="1-hexo博客基础，基本操作命令，基本配置"><a href="#1-hexo博客基础，基本操作命令，基本配置" class="headerlink" title="1. hexo博客基础，基本操作命令，基本配置"></a>1. hexo博客基础，基本操作命令，基本配置</h3><p>hexo源码同步在 <a href="https://github.com/hexojs/hexo" target="_blank" rel="noopener">Hexo_github</a>上。<br>操作命令非常简单，见我的HEXO博客，和官方<a href="https://hexo.io/docs/" target="_blank" rel="noopener">hexo DOC文档</a>，介绍的非常详细。</p>
+<p>基本结构：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line"></span><br><span class="line">├── .deploy</span><br><span class="line"></span><br><span class="line">├── public</span><br><span class="line"></span><br><span class="line">├── scaffolds</span><br><span class="line"></span><br><span class="line">├── scripts</span><br><span class="line"></span><br><span class="line">├── source</span><br><span class="line"></span><br><span class="line">| ├── _drafts</span><br><span class="line"></span><br><span class="line">| └── _posts</span><br><span class="line"></span><br><span class="line">├── themes</span><br><span class="line"></span><br><span class="line">├── _config.yml</span><br><span class="line"></span><br><span class="line">└── package.json</span><br></pre></td></tr></table></figure></p>
 <h3 id="2-yaml文件结构和配置"><a href="#2-yaml文件结构和配置" class="headerlink" title="2.yaml文件结构和配置"></a>2.yaml文件结构和配置</h3><p><a href="https://blog.csdn.net/beginya/article/details/76768968" target="_blank" rel="noopener">YAML文件简介</a> 这个文件基本介绍的很好，我也不Copy了。</p>
 <blockquote>
 <p>语法：<br>I.使用空格 Space 缩进表示分层，不同层次之间的缩进可以使用不同的空格数目，但是同层元素一定左对齐，即前面空格数目相同（不能使用 Tab，各个系统 Tab对应的 Space 数目可能不同，导致层次混乱）;<br>II.‘#’表示注释，只能单行注释，从#开始处到行尾;<br>III. 破折号后面跟一个空格（a dash and space）表示列表;<br>IV. 用冒号和空格表示键值对 key: value；<br>V.简单数据（scalars，标量数据）可以不使用引号括起来，包括字符串数据。用单引号或者双引号括起来的被当作字符串数据，在单引号或双引号中使用C风格的转义字符；</p>
@@ -481,7 +482,14 @@
 <p>引申知识点：<a href="http://www.cnblogs.com/fangzuchang/p/6702023.html" target="_blank" rel="noopener">URL、域名、DNS解析理解</a></p>
 </blockquote>
 <h3 id="5-makedown文件的基础语法-yu-write基本使用"><a href="#5-makedown文件的基础语法-yu-write基本使用" class="headerlink" title="5.makedown文件的基础语法 yu write基本使用"></a>5.makedown文件的基础语法 yu write基本使用</h3><p>这篇文章总结的不错：<a href="https://github.com/younghz/Markdown" target="_blank" rel="noopener">Markdown 基本语法</a><br>不过，我借助Yu writer 工具，节省了我的不少学习成本。</p>
-<h3 id="6-git的基本命令"><a href="#6-git的基本命令" class="headerlink" title="6.git的基本命令"></a>6.git的基本命令</h3><h3 id="7-网站运营辅助工具"><a href="#7-网站运营辅助工具" class="headerlink" title="7.网站运营辅助工具"></a>7.网站运营辅助工具</h3>
+<h3 id="6-git的基本命令"><a href="#6-git的基本命令" class="headerlink" title="6.git的基本命令"></a>6.git的基本命令</h3><h3 id="7-网站运营辅助工具"><a href="#7-网站运营辅助工具" class="headerlink" title="7.网站运营辅助工具"></a>7.网站运营辅助工具</h3><ol>
+<li><p>查询次数统计，使用的是<a href="https://leancloud.cn/" target="_blank" rel="noopener">leancloud阅读次数统计</a></p>
+</li>
+<li><p>字数统计，阅读时长等统计，新版本Next 6.0使用的是 hexo-symbols-count-time，需要npm安装插件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-symbols-count-time --save</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
       
     </div>
 
