@@ -114,12 +114,12 @@
 <meta property="og:site_name" content="The Path of Dave">
 <meta property="og:description" content=".net 的垃圾回收机制GC对象的生命一个对象的生命周期简单概括就是：创建&amp;gt;使用&amp;gt;释放，在.NET中一个对象的生命周期：  new创建对象并分配内存； 对象初始化； 对象操作、使用； 资源清理（Managed Resources）； GC垃圾回收（Unmanaged Resources）；  用C++进行编程，内存的处理绝对是让每个程序设计者最头疼的一块了。但是对于.net平台下使用c">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://sunrong.site/2018/09/22/Net-GC垃圾回收原理/GC%20%E7%AE%97%E6%B3%95.png">
-<meta property="og:updated_time" content="2018-09-24T14:31:29.876Z">
+<meta property="og:image" content="http://sunrong.site/2018/09/22/Net-GC垃圾回收原理/img/GC算法.png">
+<meta property="og:updated_time" content="2018-10-08T15:42:20.944Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content=".Net GC垃圾回收原理">
 <meta name="twitter:description" content=".net 的垃圾回收机制GC对象的生命一个对象的生命周期简单概括就是：创建&amp;gt;使用&amp;gt;释放，在.NET中一个对象的生命周期：  new创建对象并分配内存； 对象初始化； 对象操作、使用； 资源清理（Managed Resources）； GC垃圾回收（Unmanaged Resources）；  用C++进行编程，内存的处理绝对是让每个程序设计者最头疼的一块了。但是对于.net平台下使用c">
-<meta name="twitter:image" content="http://sunrong.site/2018/09/22/Net-GC垃圾回收原理/GC%20%E7%AE%97%E6%B3%95.png">
+<meta name="twitter:image" content="http://sunrong.site/2018/09/22/Net-GC垃圾回收原理/img/GC算法.png">
 
 
 
@@ -384,7 +384,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-09-24 22:31:29" itemprop="dateModified" datetime="2018-09-24T22:31:29+08:00">2018-09-24</time>
+                <time title="Modified: 2018-10-08 23:42:20" itemprop="dateModified" datetime="2018-10-08T23:42:20+08:00">2018-10-08</time>
               
             
           </span>
@@ -438,14 +438,6 @@
           
 
           
-            <span class="post-meta-divider">|</span>
-            <span class="post-meta-item-icon"
-            >
-            <i class="fa fa-eye"></i>
-             Views:  
-            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
-            </span>
-          
 
           
 
@@ -474,7 +466,7 @@
 </ol>
 <p>用C++进行编程，内存的处理绝对是让每个程序设计者最头疼的一块了。但是对于.net平台下使用c#语言开发系统，内存管理可以说已经不算是问题了。在.net平台下CLR负责管理内存，CLR中的垃圾收集器GC：Garbage Collection，负责执行内存的清理工作，但是GC也只是负责清理托管堆上的垃圾对象，而对于非托管的资源对象，GC则不起作用，必须要程序开发者手动清理。对于Stream，数据库的连接，GDI+的相关对象，还有Com对象等等，这些资源并不是受到.Net管理而统称为非托管资源，非托管资源需要手动显式进行释放。</p>
 <h3 id="GC原理简介"><a href="#GC原理简介" class="headerlink" title="GC原理简介"></a>GC原理简介</h3><p>nGC是垃圾回收（Garbage Collect）的缩写，是.NET核心机制的重要部分。基本工作原理可看做是Mark-Compact算法，就是遍历托管堆中的对象，标记哪些被使用对象（那些没人使用的就是所谓的垃圾），然后把可达对象转移到一个连续的地址空间（也叫压缩），其余的所有没用的对象内存被回收掉。<br>为了实现这个原理，GC有多种算法。比较常见的算法有Reference Counting，Mark &amp; Sweep等等。<br>目前主流的虚拟系统.NET CLR，Java VM都是采用的Mark Sweep算法。</p>
-<p><img src="GC%20%E7%AE%97%E6%B3%95.png" alt="GC 算法"></p>
+<p><img src="/2018/09/22/Net-GC垃圾回收原理/img/GC算法.png" alt="GC 算法"></p>
 <h3 id="CLR-内存管理概念"><a href="#CLR-内存管理概念" class="headerlink" title="CLR 内存管理概念"></a>CLR <a href="https://docs.microsoft.com/en-us/dotnet/standard/garbage-collection/fundamentals" target="_blank" rel="noopener">内存管理概念</a></h3><ol>
 <li>Each process has its own, separate virtual address space.</li>
 <li>空间限制 By default, on 32-bit computers, each process has a 2-GB user-mode virtual address space.</li>
