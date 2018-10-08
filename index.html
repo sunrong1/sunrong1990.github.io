@@ -382,7 +382,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-10-08 23:42:20" itemprop="dateModified" datetime="2018-10-08T23:42:20+08:00">2018-10-08</time>
+                <time title="Modified: 2018-10-08 23:51:46" itemprop="dateModified" datetime="2018-10-08T23:51:46+08:00">2018-10-08</time>
               
             
           </span>
@@ -487,6 +487,7 @@
 <li>G1:在GC中幸存下来的G0对象</li>
 <li>G2:大对象(Size&gt;=85000Byte);在GC中幸存下来的G1对象</li>
 </ol>
+<p><img src="/2018/09/22/Net-GC垃圾回收原理/img/GC分代.png" alt="GC 分代"></p>
 <p>CLR会管理两种类型的堆，小对象堆（small object heap，SOH）和大对象堆（large object heap，LOH），其中所有大于85000byte的内存分配都会在LOH上进行。　　<br>代收集规则：当一个代N被收集以后，在这个代里的幸存下来的对象会被标记为N+1代的对象。GC对不同代的对象执行不同的检查策略以优化性能。每个GC周期都会检查第0代对象。大约1/10的GC周期检查第0代和第1代对象。大约1/100的GC周期检查所有的对象。</p>
 
           
