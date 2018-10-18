@@ -114,7 +114,7 @@
 <meta property="og:site_name" content="The Path of Dave">
 <meta property="og:description" content="参考资料/工具SQL书籍资料 Ben Forta的《SQL必知必会》 SQL的极好的入门教材，相见恨晚； LeetCode 书籍库相关的练习题SQL工具、软件 Mysql workbench 8.0版本，这款DBMS挺好用 Navicat 辅助DBMS 数据库软件 mysql 5.5 Server老版本，入门足够用，体积小，易安装Mysql workbench 使用实践  Select查询后，有时">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-10-15T15:03:08.222Z">
+<meta property="og:updated_time" content="2018-10-18T14:58:34.648Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="我的数据库基础练习">
 <meta name="twitter:description" content="参考资料/工具SQL书籍资料 Ben Forta的《SQL必知必会》 SQL的极好的入门教材，相见恨晚； LeetCode 书籍库相关的练习题SQL工具、软件 Mysql workbench 8.0版本，这款DBMS挺好用 Navicat 辅助DBMS 数据库软件 mysql 5.5 Server老版本，入门足够用，体积小，易安装Mysql workbench 使用实践  Select查询后，有时">
@@ -382,7 +382,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-10-15 23:03:08" itemprop="dateModified" datetime="2018-10-15T23:03:08+08:00">2018-10-15</time>
+                <time title="Modified: 2018-10-18 22:58:34" itemprop="dateModified" datetime="2018-10-18T22:58:34+08:00">2018-10-18</time>
               
             
           </span>
@@ -452,7 +452,13 @@
 <li>新开SQL编辑器 Ctrl + T</li>
 <li>查看执行解释 (explain current statement) Ctrl + Alt + X</li>
 </ul>
-<h2 id="LeetCode-简单题目解答"><a href="#LeetCode-简单题目解答" class="headerlink" title="LeetCode 简单题目解答"></a>LeetCode 简单题目解答</h2><h3 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h3>
+<h2 id="LeetCode-简单题目解答"><a href="#LeetCode-简单题目解答" class="headerlink" title="LeetCode 简单题目解答"></a>LeetCode 简单题目解答</h2><h3 id="1-上升的温度"><a href="#1-上升的温度" class="headerlink" title="1. 上升的温度"></a>1. 上升的温度</h3><ul>
+<li>查找与之前（昨天的）日期相比温度更高的所有日期的 Id。<br>+———+——————+——————+<br>| Id(INT) | RecordDate(DATE) | Temperature(INT) |<br>+———+——————+——————+<br>|       1 |       2015-01-01 |               10 |<br>|       2 |       2015-01-02 |               25 |<br>|       3 |       2015-01-03 |               20 |<br>|       4 |       2015-01-04 |               30 |<br>+———+——————+——————+<br>select w1.id from Weather as w1,Weather as w2 where w1.Temperature &gt;w2.Temperature and datediff(w1.RecordDate,w2.RecordDate)=1</li>
+</ul>
+<p>知识点：表自交的使用；日期的函数的应用；</p>
+<h3 id="2-超过5名学生的课"><a href="#2-超过5名学生的课" class="headerlink" title="2. 超过5名学生的课"></a>2. 超过5名学生的课</h3><p>+———+————+<br>| student | class      |<br>+———+————+<br>| A       | Math       |<br>| B       | English    |<br>| C       | Math       |<br>| D       | Biology    |<br>| E       | Math       |<br>| F       | Computer   |<br>| G       | Math       |<br>| H       | Math       |<br>| I       | Math       |<br>+———+————+</p>
+<p>select class from courses group by class having count(distinct student) &gt;= 5<br>知识点：having的使用，分类后的数据进行筛选</p>
+
       
     </div>
 
@@ -694,7 +700,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料-工具"><span class="nav-number">1.</span> <span class="nav-text">参考资料/工具</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SQL书籍资料"><span class="nav-number">1.1.</span> <span class="nav-text">SQL书籍资料</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SQL工具、软件"><span class="nav-number">1.2.</span> <span class="nav-text">SQL工具、软件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mysql-workbench-使用实践"><span class="nav-number">2.</span> <span class="nav-text">Mysql workbench 使用实践</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LeetCode-简单题目解答"><span class="nav-number">3.</span> <span class="nav-text">LeetCode 简单题目解答</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1"><span class="nav-number">3.1.</span> <span class="nav-text">1.</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料-工具"><span class="nav-number">1.</span> <span class="nav-text">参考资料/工具</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SQL书籍资料"><span class="nav-number">1.1.</span> <span class="nav-text">SQL书籍资料</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SQL工具、软件"><span class="nav-number">1.2.</span> <span class="nav-text">SQL工具、软件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mysql-workbench-使用实践"><span class="nav-number">2.</span> <span class="nav-text">Mysql workbench 使用实践</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LeetCode-简单题目解答"><span class="nav-number">3.</span> <span class="nav-text">LeetCode 简单题目解答</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-上升的温度"><span class="nav-number">3.1.</span> <span class="nav-text">1. 上升的温度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-超过5名学生的课"><span class="nav-number">3.2.</span> <span class="nav-text">2. 超过5名学生的课</span></a></li></ol></li></ol></div>
             
 
           </div>
