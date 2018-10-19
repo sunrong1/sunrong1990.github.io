@@ -545,7 +545,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-10-18 22:58:34" itemprop="dateModified" datetime="2018-10-18T22:58:34+08:00">2018-10-18</time>
+                <time title="Modified: 2018-10-19 22:30:24" itemprop="dateModified" datetime="2018-10-19T22:30:24+08:00">2018-10-19</time>
               
             
           </span>
@@ -603,7 +603,8 @@
           
             <h2 id="参考资料-工具"><a href="#参考资料-工具" class="headerlink" title="参考资料/工具"></a>参考资料/工具</h2><h3 id="SQL书籍资料"><a href="#SQL书籍资料" class="headerlink" title="SQL书籍资料"></a>SQL书籍资料</h3><ul>
 <li>Ben Forta的《SQL必知必会》 SQL的极好的入门教材，相见恨晚；</li>
-<li>LeetCode 书籍库相关的练习题<h3 id="SQL工具、软件"><a href="#SQL工具、软件" class="headerlink" title="SQL工具、软件"></a>SQL工具、软件</h3></li>
+<li>LeetCode 书籍库相关的练习题</li>
+<li><a href="https://dev.mysql.com/doc/refman/5.7/en/" target="_blank" rel="noopener">mysql官方文档</a><h3 id="SQL工具、软件"><a href="#SQL工具、软件" class="headerlink" title="SQL工具、软件"></a>SQL工具、软件</h3></li>
 <li>Mysql workbench 8.0版本，这款DBMS挺好用</li>
 <li>Navicat 辅助DBMS</li>
 <li>数据库软件 mysql 5.5 Server老版本，入门足够用，体积小，易安装<h2 id="Mysql-workbench-使用实践"><a href="#Mysql-workbench-使用实践" class="headerlink" title="Mysql workbench 使用实践"></a>Mysql workbench 使用实践</h2></li>
@@ -618,11 +619,130 @@
 <li>查看执行解释 (explain current statement) Ctrl + Alt + X</li>
 </ul>
 <h2 id="LeetCode-简单题目解答"><a href="#LeetCode-简单题目解答" class="headerlink" title="LeetCode 简单题目解答"></a>LeetCode 简单题目解答</h2><h3 id="1-上升的温度"><a href="#1-上升的温度" class="headerlink" title="1. 上升的温度"></a>1. 上升的温度</h3><ul>
-<li>查找与之前（昨天的）日期相比温度更高的所有日期的 Id。<br>+———+——————+——————+<br>| Id(INT) | RecordDate(DATE) | Temperature(INT) |<br>+———+——————+——————+<br>|       1 |       2015-01-01 |               10 |<br>|       2 |       2015-01-02 |               25 |<br>|       3 |       2015-01-03 |               20 |<br>|       4 |       2015-01-04 |               30 |<br>+———+——————+——————+<br>select w1.id from Weather as w1,Weather as w2 where w1.Temperature &gt;w2.Temperature and datediff(w1.RecordDate,w2.RecordDate)=1</li>
+<li>查找与之前（昨天的）日期相比温度更高的所有日期的 Id。</li>
 </ul>
+<table>
+<thead>
+<tr>
+<th>Id(INT)</th>
+<th>RecordDate(DATE)</th>
+<th>Temperature(INT)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>2015-01-01</td>
+<td>10</td>
+</tr>
+<tr>
+<td>2</td>
+<td>2015-01-02</td>
+<td>25</td>
+</tr>
+<tr>
+<td>3</td>
+<td>2015-01-03</td>
+<td>20</td>
+</tr>
+<tr>
+<td>4</td>
+<td>2015-01-04</td>
+<td>30</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> w1.id <span class="keyword">from</span> Weather <span class="keyword">as</span> w1,Weather <span class="keyword">as</span> w2 <span class="keyword">where</span> w1.Temperature &gt;w2.Temperature <span class="keyword">and</span> <span class="keyword">datediff</span>(w1.RecordDate,w2.RecordDate)=<span class="number">1</span></span><br></pre></td></tr></table></figure>
 <p>知识点：表自交的使用；日期的函数的应用；</p>
-<h3 id="2-超过5名学生的课"><a href="#2-超过5名学生的课" class="headerlink" title="2. 超过5名学生的课"></a>2. 超过5名学生的课</h3><p>+———+————+<br>| student | class      |<br>+———+————+<br>| A       | Math       |<br>| B       | English    |<br>| C       | Math       |<br>| D       | Biology    |<br>| E       | Math       |<br>| F       | Computer   |<br>| G       | Math       |<br>| H       | Math       |<br>| I       | Math       |<br>+———+————+</p>
-<p>select class from courses group by class having count(distinct student) &gt;= 5<br>知识点：having的使用，分类后的数据进行筛选</p>
+<h3 id="2-超过5名学生的课"><a href="#2-超过5名学生的课" class="headerlink" title="2. 超过5名学生的课"></a>2. 超过5名学生的课</h3><table>
+<thead>
+<tr>
+<th>student</th>
+<th>class</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>Math</td>
+</tr>
+<tr>
+<td>B</td>
+<td>English</td>
+</tr>
+<tr>
+<td>C</td>
+<td>Math</td>
+</tr>
+<tr>
+<td>D</td>
+<td>Biology</td>
+</tr>
+<tr>
+<td>E</td>
+<td>Math</td>
+</tr>
+<tr>
+<td>F</td>
+<td>Computer</td>
+</tr>
+<tr>
+<td>G</td>
+<td>Math</td>
+</tr>
+<tr>
+<td>H</td>
+<td>Math</td>
+</tr>
+<tr>
+<td>I</td>
+<td>Math</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">class</span> <span class="keyword">from</span> courses <span class="keyword">group</span> <span class="keyword">by</span> <span class="keyword">class</span> <span class="keyword">having</span> <span class="keyword">count</span>(<span class="keyword">distinct</span> student) &gt;= <span class="number">5</span></span><br></pre></td></tr></table></figure>
+<p>知识点：having的使用，分类后的数据进行筛选</p>
+<h3 id="3-交换工资"><a href="#3-交换工资" class="headerlink" title="3.交换工资"></a>3.交换工资</h3><ul>
+<li>交换性别数据</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>name</th>
+<th>sex</th>
+<th>salary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>A</td>
+<td>m</td>
+<td>2500</td>
+</tr>
+<tr>
+<td>2</td>
+<td>B</td>
+<td>f</td>
+<td>1500</td>
+</tr>
+<tr>
+<td>3</td>
+<td>C</td>
+<td>m</td>
+<td>5500</td>
+</tr>
+<tr>
+<td>4</td>
+<td>D</td>
+<td>f</td>
+<td>500</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">update</span> salary <span class="keyword">set</span> sex=<span class="keyword">if</span>(sex=<span class="string">"m"</span>,<span class="string">"f"</span>,<span class="string">"m"</span>)</span><br></pre></td></tr></table></figure>
+<p>知识点：MySQL函数的使用</p>
 
           
         
