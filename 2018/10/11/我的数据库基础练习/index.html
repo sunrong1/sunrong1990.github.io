@@ -114,7 +114,7 @@
 <meta property="og:site_name" content="The Path of Dave">
 <meta property="og:description" content="参考资料/工具SQL书籍资料 Ben Forta的《SQL必知必会》 SQL的极好的入门教材，相见恨晚； LeetCode 书籍库相关的练习题 mysql官方文档SQL工具、软件 Mysql workbench 8.0版本，这款DBMS挺好用 Navicat 辅助DBMS 数据库软件 mysql 5.5 Server老版本，入门足够用，体积小，易安装Mysql workbench 使用实践  Se">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-10-19T14:30:24.444Z">
+<meta property="og:updated_time" content="2018-10-21T03:58:40.352Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="我的数据库基础练习">
 <meta name="twitter:description" content="参考资料/工具SQL书籍资料 Ben Forta的《SQL必知必会》 SQL的极好的入门教材，相见恨晚； LeetCode 书籍库相关的练习题 mysql官方文档SQL工具、软件 Mysql workbench 8.0版本，这款DBMS挺好用 Navicat 辅助DBMS 数据库软件 mysql 5.5 Server老版本，入门足够用，体积小，易安装Mysql workbench 使用实践  Se">
@@ -382,7 +382,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-10-19 22:30:24" itemprop="dateModified" datetime="2018-10-19T22:30:24+08:00">2018-10-19</time>
+                <time title="Modified: 2018-10-21 11:58:40" itemprop="dateModified" datetime="2018-10-21T11:58:40+08:00">2018-10-21</time>
               
             
           </span>
@@ -577,7 +577,72 @@
 </tbody>
 </table>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">update</span> salary <span class="keyword">set</span> sex=<span class="keyword">if</span>(sex=<span class="string">"m"</span>,<span class="string">"f"</span>,<span class="string">"m"</span>)</span><br></pre></td></tr></table></figure>
-<p>知识点：MySQL函数的使用</p>
+<p>知识点：MySQL函数之控制流函数<a href="https://dev.mysql.com/doc/refman/5.7/en/control-flow-functions.html#function_if" target="_blank" rel="noopener">Control Flow Functions</a></p>
+<h3 id="4-超过经理收入的员工"><a href="#4-超过经理收入的员工" class="headerlink" title="4. 超过经理收入的员工"></a>4. 超过经理收入的员工</h3><table>
+<thead>
+<tr>
+<th>Id</th>
+<th>Name</th>
+<th>Salary</th>
+<th>ManagerId</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Joe</td>
+<td>70000</td>
+<td>3</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Henry</td>
+<td>80000</td>
+<td>4</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Sam</td>
+<td>60000</td>
+<td>NULL</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Max</td>
+<td>90000</td>
+<td>NULL</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>查询可以获取收入超过他们经理的员工的姓名。</li>
+</ul>
+<p>知识点：表自连接的使用Join、笛卡尔积的<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> e1.name <span class="keyword">as</span> Employee  <span class="keyword">from</span> Employee <span class="keyword">as</span> e1,Employee <span class="keyword">as</span> e2 <span class="keyword">where</span> e1.ManagerId= e2.id <span class="keyword">and</span> e1.salary &gt; e2.salary</span><br></pre></td></tr></table></figure></p>
+<h3 id="5-删除重复的电子邮箱"><a href="#5-删除重复的电子邮箱" class="headerlink" title="5.删除重复的电子邮箱"></a>5.删除重复的电子邮箱</h3><table>
+<thead>
+<tr>
+<th>Id</th>
+<th>Email</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><a href="mailto:john@example.com" target="_blank" rel="noopener">john@example.com</a></td>
+</tr>
+<tr>
+<td>2</td>
+<td><a href="mailto:bob@example.com" target="_blank" rel="noopener">bob@example.com</a></td>
+</tr>
+<tr>
+<td>3</td>
+<td><a href="mailto:john@example.com" target="_blank" rel="noopener">john@example.com</a></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>删除 <code>Person</code> 表中所有重复的电子邮箱，重复的邮箱里只保留 <strong>Id </strong>_最小 _的那个。</li>
+</ul>
 
       
     </div>
@@ -820,7 +885,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料-工具"><span class="nav-number">1.</span> <span class="nav-text">参考资料/工具</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SQL书籍资料"><span class="nav-number">1.1.</span> <span class="nav-text">SQL书籍资料</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SQL工具、软件"><span class="nav-number">1.2.</span> <span class="nav-text">SQL工具、软件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mysql-workbench-使用实践"><span class="nav-number">2.</span> <span class="nav-text">Mysql workbench 使用实践</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LeetCode-简单题目解答"><span class="nav-number">3.</span> <span class="nav-text">LeetCode 简单题目解答</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-上升的温度"><span class="nav-number">3.1.</span> <span class="nav-text">1. 上升的温度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-超过5名学生的课"><span class="nav-number">3.2.</span> <span class="nav-text">2. 超过5名学生的课</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-交换工资"><span class="nav-number">3.3.</span> <span class="nav-text">3.交换工资</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料-工具"><span class="nav-number">1.</span> <span class="nav-text">参考资料/工具</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SQL书籍资料"><span class="nav-number">1.1.</span> <span class="nav-text">SQL书籍资料</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SQL工具、软件"><span class="nav-number">1.2.</span> <span class="nav-text">SQL工具、软件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mysql-workbench-使用实践"><span class="nav-number">2.</span> <span class="nav-text">Mysql workbench 使用实践</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LeetCode-简单题目解答"><span class="nav-number">3.</span> <span class="nav-text">LeetCode 简单题目解答</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-上升的温度"><span class="nav-number">3.1.</span> <span class="nav-text">1. 上升的温度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-超过5名学生的课"><span class="nav-number">3.2.</span> <span class="nav-text">2. 超过5名学生的课</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-交换工资"><span class="nav-number">3.3.</span> <span class="nav-text">3.交换工资</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-超过经理收入的员工"><span class="nav-number">3.4.</span> <span class="nav-text">4. 超过经理收入的员工</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-删除重复的电子邮箱"><span class="nav-number">3.5.</span> <span class="nav-text">5.删除重复的电子邮箱</span></a></li></ol></li></ol></div>
             
 
           </div>

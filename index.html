@@ -545,7 +545,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-10-19 22:30:24" itemprop="dateModified" datetime="2018-10-19T22:30:24+08:00">2018-10-19</time>
+                <time title="Modified: 2018-10-21 11:58:40" itemprop="dateModified" datetime="2018-10-21T11:58:40+08:00">2018-10-21</time>
               
             
           </span>
@@ -742,7 +742,72 @@
 </tbody>
 </table>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">update</span> salary <span class="keyword">set</span> sex=<span class="keyword">if</span>(sex=<span class="string">"m"</span>,<span class="string">"f"</span>,<span class="string">"m"</span>)</span><br></pre></td></tr></table></figure>
-<p>知识点：MySQL函数的使用</p>
+<p>知识点：MySQL函数之控制流函数<a href="https://dev.mysql.com/doc/refman/5.7/en/control-flow-functions.html#function_if" target="_blank" rel="noopener">Control Flow Functions</a></p>
+<h3 id="4-超过经理收入的员工"><a href="#4-超过经理收入的员工" class="headerlink" title="4. 超过经理收入的员工"></a>4. 超过经理收入的员工</h3><table>
+<thead>
+<tr>
+<th>Id</th>
+<th>Name</th>
+<th>Salary</th>
+<th>ManagerId</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Joe</td>
+<td>70000</td>
+<td>3</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Henry</td>
+<td>80000</td>
+<td>4</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Sam</td>
+<td>60000</td>
+<td>NULL</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Max</td>
+<td>90000</td>
+<td>NULL</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>查询可以获取收入超过他们经理的员工的姓名。</li>
+</ul>
+<p>知识点：表自连接的使用Join、笛卡尔积的<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> e1.name <span class="keyword">as</span> Employee  <span class="keyword">from</span> Employee <span class="keyword">as</span> e1,Employee <span class="keyword">as</span> e2 <span class="keyword">where</span> e1.ManagerId= e2.id <span class="keyword">and</span> e1.salary &gt; e2.salary</span><br></pre></td></tr></table></figure></p>
+<h3 id="5-删除重复的电子邮箱"><a href="#5-删除重复的电子邮箱" class="headerlink" title="5.删除重复的电子邮箱"></a>5.删除重复的电子邮箱</h3><table>
+<thead>
+<tr>
+<th>Id</th>
+<th>Email</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><a href="mailto:john@example.com" target="_blank" rel="noopener">john@example.com</a></td>
+</tr>
+<tr>
+<td>2</td>
+<td><a href="mailto:bob@example.com" target="_blank" rel="noopener">bob@example.com</a></td>
+</tr>
+<tr>
+<td>3</td>
+<td><a href="mailto:john@example.com" target="_blank" rel="noopener">john@example.com</a></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>删除 <code>Person</code> 表中所有重复的电子邮箱，重复的邮箱里只保留 <strong>Id </strong>_最小 _的那个。</li>
+</ul>
 
           
         
