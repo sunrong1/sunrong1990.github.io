@@ -545,7 +545,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-10-21 11:58:40" itemprop="dateModified" datetime="2018-10-21T11:58:40+08:00">2018-10-21</time>
+                <time title="Modified: 2018-10-22 22:37:19" itemprop="dateModified" datetime="2018-10-22T22:37:19+08:00">2018-10-22</time>
               
             
           </span>
@@ -808,7 +808,63 @@
 <ul>
 <li>删除 <code>Person</code> 表中所有重复的电子邮箱，重复的邮箱里只保留 <strong>Id </strong>_最小 _的那个。</li>
 </ul>
-
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">delete</span> p1 <span class="keyword">from</span> Person <span class="keyword">as</span> p1,Person <span class="keyword">as</span> p2 <span class="keyword">where</span> p1.Email = p2.Email <span class="keyword">and</span> p1.id &gt; p2.id</span><br></pre></td></tr></table></figure>
+<p>知识点：表的自连接，作用很大。</p>
+<h3 id="6-查找重复的电子邮箱"><a href="#6-查找重复的电子邮箱" class="headerlink" title="6. 查找重复的电子邮箱"></a>6. 查找重复的电子邮箱</h3><table>
+<thead>
+<tr>
+<th>Id</th>
+<th>Email</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><a href="mailto:a@b.com" target="_blank" rel="noopener">a@b.com</a></td>
+</tr>
+<tr>
+<td>2</td>
+<td><a href="mailto:c@d.com" target="_blank" rel="noopener">c@d.com</a></td>
+</tr>
+<tr>
+<td>3</td>
+<td><a href="mailto:a@b.com" target="_blank" rel="noopener">a@b.com</a></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>查找 <code>Person</code> 表中所有重复的电子邮箱。</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 方法1：派生表的使用，必须加别名</span></span><br><span class="line"><span class="keyword">select</span> email <span class="keyword">from</span> (<span class="keyword">select</span> email,<span class="keyword">count</span>(*) <span class="keyword">as</span> <span class="keyword">count</span> <span class="keyword">from</span> Person <span class="keyword">group</span> <span class="keyword">by</span> email) <span class="keyword">as</span> my <span class="keyword">where</span> <span class="keyword">count</span> &gt; <span class="number">1</span></span><br><span class="line"><span class="comment">-- 方法2：Having 和聚类函数的使用</span></span><br><span class="line"><span class="keyword">SELECT</span> Email <span class="keyword">FROM</span> Person <span class="keyword">GROUP</span> <span class="keyword">BY</span> Email <span class="keyword">HAVING</span> <span class="keyword">COUNT</span>(*) &gt; <span class="number">1</span>;</span><br><span class="line"><span class="comment">-- 方法3：</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> p1.Email <span class="keyword">FROM</span> Person p1 <span class="keyword">JOIN</span> Person p2 <span class="keyword">ON</span> p1.Email = p2.Email <span class="keyword">WHERE</span> p1.Id &lt;&gt; p2.Id;</span><br></pre></td></tr></table></figure>
+<p>知识点：聚类函数的使用；</p>
+<h3 id="7-第二高的薪水"><a href="#7-第二高的薪水" class="headerlink" title="7. 第二高的薪水"></a>7. 第二高的薪水</h3><table>
+<thead>
+<tr>
+<th>Id</th>
+<th>Salary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>100</td>
+</tr>
+<tr>
+<td>2</td>
+<td>200</td>
+</tr>
+<tr>
+<td>3</td>
+<td>300</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>编写一个 SQL 查询，获取 <code>Employee</code> 表中第二高的薪水（Salary）<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 方法1:子查询的使用；聚类函数的使用；Limit的使用；</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">max</span>(Salary)  <span class="keyword">as</span> SecondHighestSalary <span class="keyword">from</span> Employee <span class="keyword">where</span> Salary &lt;(<span class="keyword">select</span> <span class="keyword">max</span>(Salary) <span class="keyword">from</span> Employee)  <span class="keyword">limit</span> <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 解法2:IFNULL函数使用；排序函数使用； 更通用方法</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">IFNULL</span>((<span class="keyword">select</span> <span class="keyword">Distinct</span> Salary <span class="keyword">from</span> Employee <span class="keyword">order</span> <span class="keyword">by</span> Salary <span class="keyword">DESC</span> <span class="keyword">limit</span> <span class="number">1</span>,<span class="number">1</span>),<span class="literal">null</span>) <span class="keyword">as</span> SecondHighestSalary</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>知识点：聚类函数和自查询的使用</p>
+<h3 id="8"><a href="#8" class="headerlink" title="8."></a>8.</h3>
           
         
       
