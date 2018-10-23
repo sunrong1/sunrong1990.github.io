@@ -319,6 +319,254 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://sunrong.site/2018/10/23/mySQL数据库中级实践/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dave Sun">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/hero.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="The Path of Dave">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/23/mySQL数据库中级实践/" itemprop="url">
+                  mySQL数据库中级实践
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-10-23 22:01:24 / Modified: 22:54:51" itemprop="dateCreated datePublished" datetime="2018-10-23T22:01:24+08:00">2018-10-23</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/10/23/mySQL数据库中级实践/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">Comments: </span> <span class="post-comments-count valine-comment-count" data-xid="/2018/10/23/mySQL数据库中级实践/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/10/23/mySQL数据库中级实践/" class="leancloud_visitors" data-flag-title="mySQL数据库中级实践">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Views: </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="参考资料-工具"><a href="#参考资料-工具" class="headerlink" title="参考资料/工具"></a>参考资料/工具</h2><h3 id="SQL书籍资料"><a href="#SQL书籍资料" class="headerlink" title="SQL书籍资料"></a>SQL书籍资料</h3><ul>
+<li>Ben Forta的《SQL必知必会》 SQL的极好的入门教材，相见恨晚；</li>
+<li>LeetCode 数据库中级练习题</li>
+<li><a href="https://dev.mysql.com/doc/refman/5.7/en/" target="_blank" rel="noopener">mysql官方文档</a><h3 id="SQL工具、软件"><a href="#SQL工具、软件" class="headerlink" title="SQL工具、软件"></a>SQL工具、软件</h3></li>
+<li>Mysql workbench 8.0版本，这款DBMS挺好用</li>
+<li>Navicat 辅助DBMS</li>
+<li>数据库软件 mysql 5.5 Server老版本，入门足够用，体积小，易安装<h2 id="Mysql-workbench-使用实践"><a href="#Mysql-workbench-使用实践" class="headerlink" title="Mysql workbench 使用实践"></a>Mysql workbench 使用实践</h2></li>
+</ul>
+<p>Select查询后，有时候result grid 不出现，重启Workbench解决；</p>
+<ul>
+<li>执行选中的SQL(如无选中则执行所有) Ctrl + Shift + Enter</li>
+<li>执行当前这句SQL (注意MySQL Workbench的编辑器会要求每一句SQL必须以;结尾, 否则会高亮提示错误) Ctrl + Enter</li>
+<li>注释掉选中SQL  <em>Ctrl + /</em></li>
+<li>格式化(美化)SQL <em>Ctrl + B</em></li>
+<li>新开SQL编辑器 Ctrl + T</li>
+<li>查看执行解释 (explain current statement) Ctrl + Alt + X</li>
+</ul>
+<h2 id="LeetCode-中级题目解答"><a href="#LeetCode-中级题目解答" class="headerlink" title="LeetCode 中级题目解答"></a>LeetCode 中级题目解答</h2><h3 id="1-换座位"><a href="#1-换座位" class="headerlink" title="1. 换座位"></a>1. 换座位</h3><table>
+<thead>
+<tr>
+<th>id</th>
+<th>student</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Abbot</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Doris</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Emerson</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Green</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Jeames</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>其中纵列的 <strong>id </strong>是连续递增的，改变相邻俩学生的座位。<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 知识点：IF控制流语句；奇偶数的判断；子查询的使用</span></span><br><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    <span class="keyword">IF</span>(<span class="keyword">id</span> % <span class="number">2</span> = <span class="number">1</span>,</span><br><span class="line">        <span class="keyword">IF</span>(<span class="keyword">id</span> = (<span class="keyword">SELECT</span> </span><br><span class="line">                    <span class="keyword">COUNT</span>(*)</span><br><span class="line">                <span class="keyword">FROM</span></span><br><span class="line">                    seat),</span><br><span class="line">            <span class="keyword">id</span>,</span><br><span class="line">            <span class="keyword">id</span> + <span class="number">1</span>),</span><br><span class="line">        <span class="keyword">id</span> - <span class="number">1</span>) <span class="keyword">AS</span> <span class="keyword">id</span>,</span><br><span class="line">    student</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">    seat</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="keyword">id</span></span><br><span class="line"></span><br><span class="line"><span class="comment">--- 知识点：case语句使用，和C的Switch语句非常像；</span></span><br><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    (<span class="keyword">CASE</span></span><br><span class="line">        <span class="keyword">WHEN</span> <span class="keyword">id</span> % <span class="number">2</span> &lt;&gt; <span class="number">1</span> <span class="keyword">THEN</span> <span class="keyword">id</span> - <span class="number">1</span></span><br><span class="line">        <span class="keyword">WHEN</span></span><br><span class="line">            <span class="keyword">id</span> = (<span class="keyword">SELECT</span> </span><br><span class="line">                    <span class="keyword">COUNT</span>(*)</span><br><span class="line">                <span class="keyword">FROM</span></span><br><span class="line">                    seat)</span><br><span class="line">        <span class="keyword">THEN</span></span><br><span class="line">            <span class="keyword">id</span></span><br><span class="line">        <span class="keyword">ELSE</span> <span class="keyword">id</span> + <span class="number">1</span></span><br><span class="line">    <span class="keyword">END</span>) <span class="keyword">AS</span> <span class="keyword">id</span>,student</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">    seat</span><br><span class="line">    <span class="keyword">order</span> <span class="keyword">by</span> <span class="keyword">id</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="2-分数排名"><a href="#2-分数排名" class="headerlink" title="2. 分数排名"></a>2. 分数排名</h3><table>
+<thead>
+<tr>
+<th>Id</th>
+<th>Score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>3.50</td>
+</tr>
+<tr>
+<td>2</td>
+<td>3.65</td>
+</tr>
+<tr>
+<td>3</td>
+<td>4.00</td>
+</tr>
+<tr>
+<td>4</td>
+<td>3.85</td>
+</tr>
+<tr>
+<td>5</td>
+<td>4.00</td>
+</tr>
+<tr>
+<td>6</td>
+<td>3.65</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>分数排名，如果两个分数相同，则两个分数排名（Rank）相同</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://sunrong.site/2018/10/16/SQL约定与规范和MySQL/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -545,7 +793,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-10-22 22:37:19" itemprop="dateModified" datetime="2018-10-22T22:37:19+08:00">2018-10-22</time>
+                <time title="Modified: 2018-10-23 22:53:22" itemprop="dateModified" datetime="2018-10-23T22:53:22+08:00">2018-10-23</time>
               
             
           </span>
@@ -603,7 +851,7 @@
           
             <h2 id="参考资料-工具"><a href="#参考资料-工具" class="headerlink" title="参考资料/工具"></a>参考资料/工具</h2><h3 id="SQL书籍资料"><a href="#SQL书籍资料" class="headerlink" title="SQL书籍资料"></a>SQL书籍资料</h3><ul>
 <li>Ben Forta的《SQL必知必会》 SQL的极好的入门教材，相见恨晚；</li>
-<li>LeetCode 书籍库相关的练习题</li>
+<li>LeetCode 数据库简单级练习题</li>
 <li><a href="https://dev.mysql.com/doc/refman/5.7/en/" target="_blank" rel="noopener">mysql官方文档</a><h3 id="SQL工具、软件"><a href="#SQL工具、软件" class="headerlink" title="SQL工具、软件"></a>SQL工具、软件</h3></li>
 <li>Mysql workbench 8.0版本，这款DBMS挺好用</li>
 <li>Navicat 辅助DBMS</li>
@@ -864,7 +1112,7 @@
 </li>
 </ul>
 <p>知识点：聚类函数和自查询的使用</p>
-<h3 id="8"><a href="#8" class="headerlink" title="8."></a>8.</h3>
+
           
         
       
@@ -1527,7 +1775,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-count">6</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
