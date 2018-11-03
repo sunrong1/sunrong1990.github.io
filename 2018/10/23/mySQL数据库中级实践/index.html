@@ -114,7 +114,7 @@
 <meta property="og:site_name" content="The Path of Dave">
 <meta property="og:description" content="参考资料/工具SQL书籍资料 Ben Forta的《SQL必知必会》 SQL的极好的入门教材，相见恨晚； LeetCode 数据库中级练习题 mysql官方文档SQL工具、软件 Mysql workbench 8.0版本，这款DBMS挺好用 Navicat 辅助DBMS 数据库软件 mysql 5.5 Server老版本，入门足够用，体积小，易安装Mysql workbench 使用实践  Sel">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-10-23T14:54:51.145Z">
+<meta property="og:updated_time" content="2018-11-03T00:57:42.751Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mySQL数据库中级实践">
 <meta name="twitter:description" content="参考资料/工具SQL书籍资料 Ben Forta的《SQL必知必会》 SQL的极好的入门教材，相见恨晚； LeetCode 数据库中级练习题 mysql官方文档SQL工具、软件 Mysql workbench 8.0版本，这款DBMS挺好用 Navicat 辅助DBMS 数据库软件 mysql 5.5 Server老版本，入门足够用，体积小，易安装Mysql workbench 使用实践  Sel">
@@ -365,12 +365,24 @@
                 
               
 
-              <time title="Created: 2018-10-23 22:01:24 / Modified: 22:54:51" itemprop="dateCreated datePublished" datetime="2018-10-23T22:01:24+08:00">2018-10-23</time>
+              <time title="Created: 2018-10-23 22:01:24" itemprop="dateCreated datePublished" datetime="2018-10-23T22:01:24+08:00">2018-10-23</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-11-03 08:57:42" itemprop="dateModified" datetime="2018-11-03T08:57:42+08:00">2018-11-03</time>
               
             
           </span>
@@ -434,14 +446,15 @@
 </ul>
 <p>Select查询后，有时候result grid 不出现，重启Workbench解决；</p>
 <ul>
-<li>执行选中的SQL(如无选中则执行所有) Ctrl + Shift + Enter</li>
-<li>执行当前这句SQL (注意MySQL Workbench的编辑器会要求每一句SQL必须以;结尾, 否则会高亮提示错误) Ctrl + Enter</li>
+<li>执行选中的SQL(如无选中则执行所有)  Ctrl + Shift + Enter</li>
+<li>执行当前这句SQL (注意MySQL Workbench的编辑器会要求每一句SQL必须以;结尾, 否则会高亮提示错误) <em>Ctrl + Enter</em></li>
 <li>注释掉选中SQL  <em>Ctrl + /</em></li>
 <li>格式化(美化)SQL <em>Ctrl + B</em></li>
 <li>新开SQL编辑器 Ctrl + T</li>
 <li>查看执行解释 (explain current statement) Ctrl + Alt + X</li>
 </ul>
-<h2 id="LeetCode-中级题目解答"><a href="#LeetCode-中级题目解答" class="headerlink" title="LeetCode 中级题目解答"></a>LeetCode 中级题目解答</h2><h3 id="1-换座位"><a href="#1-换座位" class="headerlink" title="1. 换座位"></a>1. 换座位</h3><table>
+<h2 id="LeetCode-中级题目解答"><a href="#LeetCode-中级题目解答" class="headerlink" title="LeetCode 中级题目解答"></a>LeetCode 中级题目解答</h2><a id="more"></a>
+<h3 id="1-换座位"><a href="#1-换座位" class="headerlink" title="1. 换座位"></a>1. 换座位</h3><table>
 <thead>
 <tr>
 <th>id</th>
@@ -512,6 +525,146 @@
 <ul>
 <li>分数排名，如果两个分数相同，则两个分数排名（Rank）相同</li>
 </ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 知识点：排序算法</span></span><br></pre></td></tr></table></figure>
+<h3 id="3-连续出现的数字"><a href="#3-连续出现的数字" class="headerlink" title="3. 连续出现的数字"></a>3. 连续出现的数字</h3><table>
+<thead>
+<tr>
+<th>Id</th>
+<th>Num</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1</td>
+</tr>
+<tr>
+<td>4</td>
+<td>2</td>
+</tr>
+<tr>
+<td>5</td>
+<td>1</td>
+</tr>
+<tr>
+<td>6</td>
+<td>2</td>
+</tr>
+<tr>
+<td>7</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>查找所有至少连续出现三次的数字</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 知识点 JOIN的妙用</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">distinct</span> m1.Num <span class="keyword">as</span> ConsecutiveNums   <span class="keyword">from</span> <span class="keyword">Logs</span> <span class="keyword">as</span> m1 <span class="keyword">join</span> <span class="keyword">Logs</span> <span class="keyword">as</span> m2 <span class="keyword">on</span> m1.id= m2.id<span class="number">-1</span> <span class="keyword">join</span> <span class="keyword">Logs</span> <span class="keyword">as</span> m3 <span class="keyword">on</span> m2.id= m3.id<span class="number">-1</span>  <span class="keyword">where</span> m1.Num = m2.Num  <span class="keyword">and</span> m1.Num = m3.Num</span><br></pre></td></tr></table></figure>
+<h3 id="4-第N高的薪水"><a href="#4-第N高的薪水" class="headerlink" title="4. 第N高的薪水"></a>4. 第N高的薪水</h3><table>
+<thead>
+<tr>
+<th>Id</th>
+<th>Salary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>100</td>
+</tr>
+<tr>
+<td>2</td>
+<td>200</td>
+</tr>
+<tr>
+<td>3</td>
+<td>300</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>_n = 2 _时，应返回第二高的薪水 <code>200</code>。如果不存在第 _n _高的薪水，那么查询应返回 <code>null</code></li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--方法1： SQL函数基础知识；Limit的使用；排序</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">FUNCTION</span> getNthHighestSalary(N <span class="built_in">INT</span>) <span class="keyword">RETURNS</span> <span class="built_in">INT</span></span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line"><span class="keyword">set</span> N=N<span class="number">-1</span>;</span><br><span class="line">  RETURN (</span><br><span class="line">      </span><br><span class="line">      # Write your MySQL query statement below.</span><br><span class="line">      <span class="keyword">select</span> Salary <span class="keyword">from</span> Employee <span class="keyword">group</span> <span class="keyword">by</span> Employee.Salary  <span class="keyword">order</span> <span class="keyword">by</span> Employee.Salary <span class="keyword">desc</span> <span class="keyword">limit</span> N,<span class="number">1</span></span><br><span class="line">  );</span><br><span class="line"><span class="keyword">END</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 方法2：Distinct的妙用(速度最快);</span></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">FUNCTION</span> getNthHighestSalary(N <span class="built_in">INT</span>) <span class="keyword">RETURNS</span> <span class="built_in">INT</span></span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line"><span class="keyword">set</span> N=N<span class="number">-1</span>;</span><br><span class="line">  RETURN (</span><br><span class="line">      </span><br><span class="line">      # Write your MySQL query statement below.</span><br><span class="line">      <span class="keyword">select</span> <span class="keyword">distinct</span> Salary <span class="keyword">from</span> Employee  <span class="keyword">order</span> <span class="keyword">by</span> Employee.Salary <span class="keyword">desc</span> <span class="keyword">limit</span> N,<span class="number">1</span></span><br><span class="line">  );</span><br><span class="line"><span class="keyword">END</span></span><br></pre></td></tr></table></figure>
+<h3 id="5-部门工资最高的员工"><a href="#5-部门工资最高的员工" class="headerlink" title="5.部门工资最高的员工"></a>5.部门工资最高的员工</h3><table>
+<thead>
+<tr>
+<th>Id</th>
+<th>Name</th>
+<th>Salary</th>
+<th>DepartmentId</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Joe</td>
+<td>70000</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Henry</td>
+<td>80000</td>
+<td>2</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Sam</td>
+<td>60000</td>
+<td>2</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Max</td>
+<td>90000</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Id</th>
+<th>Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>IT</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Sales</td>
+</tr>
+</tbody>
+</table>
+<p>找出每个部门工资最高的员工。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 知识点：IN的使用；子查询的使用；JOIN的使用</span></span><br><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    department.Name <span class="keyword">AS</span> Department,</span><br><span class="line">    employee.Name <span class="keyword">AS</span> Employee,</span><br><span class="line">    Salary</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">    department</span><br><span class="line">        <span class="keyword">JOIN</span></span><br><span class="line">    employee <span class="keyword">ON</span> employee.DepartmentId = department.Id</span><br><span class="line">        <span class="keyword">AND</span> employee.Salary <span class="keyword">IN</span> (<span class="keyword">SELECT</span> </span><br><span class="line">            <span class="keyword">MAX</span>(employee.Salary)</span><br><span class="line">        <span class="keyword">FROM</span></span><br><span class="line">            employee</span><br><span class="line">        <span class="keyword">WHERE</span></span><br><span class="line">            employee.DepartmentId = department.Id)</span><br></pre></td></tr></table></figure>
+<h3 id="X-关键知识点"><a href="#X-关键知识点" class="headerlink" title="X.  关键知识点"></a>X.  关键知识点</h3><h4 id="1-SQL语句的执行顺序"><a href="#1-SQL语句的执行顺序" class="headerlink" title="1. SQL语句的执行顺序:"></a>1. SQL语句的执行顺序:</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">(7)     <span class="keyword">SELECT</span> </span><br><span class="line">(<span class="number">8</span>)     <span class="keyword">DISTINCT</span> &lt;select_list&gt;</span><br><span class="line">(<span class="number">1</span>)     <span class="keyword">FROM</span> &lt;left_table&gt;</span><br><span class="line">(<span class="number">3</span>)     &lt;join_type&gt; <span class="keyword">JOIN</span> &lt;right_table&gt;</span><br><span class="line">(<span class="number">2</span>)     <span class="keyword">ON</span> &lt;join_condition&gt;</span><br><span class="line">(<span class="number">4</span>)     <span class="keyword">WHERE</span> &lt;where_condition&gt;</span><br><span class="line">(<span class="number">5</span>)     <span class="keyword">GROUP</span> <span class="keyword">BY</span> &lt;group_by_list&gt;</span><br><span class="line">(<span class="number">6</span>)     <span class="keyword">HAVING</span> &lt;having_condition&gt;</span><br><span class="line">(<span class="number">9</span>)     <span class="keyword">ORDER</span> <span class="keyword">BY</span> &lt;order_by_condition&gt;</span><br><span class="line">(<span class="number">10</span>)    <span class="keyword">LIMIT</span> &lt;limit_number&gt;</span><br></pre></td></tr></table></figure>
+<ol>
+<li><strong>FROM：</strong> 对FROM子句中的前两个表执行<strong>笛卡尔积</strong>（Cartesian product)(交叉联接），生成虚拟表VT1</li>
+<li><strong>ON：</strong> 对VT1应用ON筛选器。只有那些使&lt;join_condition&gt;为真的行才被插入VT2。</li>
+<li><strong>OUTER(JOIN)：</strong> 如果指定了OUTER JOIN（相对于CROSS JOIN 或(INNER JOIN),保留表（preserved table：左外部联接把左表标记为保留表，右外部联接把右表标记为保留表，完全外部联接把两个表都标记为保留表）中未找到匹配的行将作为外部行添加到 VT2,生成VT3.如果FROM子句包含两个以上的表，则对上一个联接生成的结果表和下一个表重复执行步骤1到步骤3，直到处理完所有的表为止。</li>
+<li><strong>WHERE：</strong> 对VT3应用WHERE筛选器。只有使&lt;where_condition&gt;为true的行才被插入VT4.</li>
+<li><strong>GROUP BY：</strong> 按GROUP BY子句中的列列表对VT4中的行分组，生成VT5.</li>
+<li><strong>CUBE|ROLLUP：</strong> 把超组(Suppergroups)插入VT5,生成VT6.</li>
+<li><strong>HAVING：</strong> 对VT6应用HAVING筛选器。只有使&lt;having_condition&gt;为true的组才会被插入VT7.</li>
+<li><strong>SELECT：</strong> 处理SELECT列表，产生VT8.</li>
+<li><strong>DISTINCT：</strong> 将重复的行从VT8中移除，产生VT9.</li>
+<li><strong>ORDER BY：</strong> 将VT9中的行按ORDER BY 子句中的列列表排序，生成游标（VC10).</li>
+<li><strong>TOP：</strong> 从VC10的开始处选择指定数量或比例的行，生成表VT11,并返回调用者。</li>
+</ol>
+<h4 id="2-JOIN语句的使用"><a href="#2-JOIN语句的使用" class="headerlink" title="2. JOIN语句的使用"></a>2. JOIN语句的使用</h4><p> <a href="https://www.cnblogs.com/reaptomorrow-flydream/p/8145610.html" target="_blank" rel="noopener">SQL的各种连接Join详解</a>:这篇文章介绍的很详细了。<br>实验可以用部门最高工资员工的表测试。</p>
 
       
     </div>
@@ -750,7 +903,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料-工具"><span class="nav-number">1.</span> <span class="nav-text">参考资料/工具</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SQL书籍资料"><span class="nav-number">1.1.</span> <span class="nav-text">SQL书籍资料</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SQL工具、软件"><span class="nav-number">1.2.</span> <span class="nav-text">SQL工具、软件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mysql-workbench-使用实践"><span class="nav-number">2.</span> <span class="nav-text">Mysql workbench 使用实践</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LeetCode-中级题目解答"><span class="nav-number">3.</span> <span class="nav-text">LeetCode 中级题目解答</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-换座位"><span class="nav-number">3.1.</span> <span class="nav-text">1. 换座位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-分数排名"><span class="nav-number">3.2.</span> <span class="nav-text">2. 分数排名</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料-工具"><span class="nav-number">1.</span> <span class="nav-text">参考资料/工具</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SQL书籍资料"><span class="nav-number">1.1.</span> <span class="nav-text">SQL书籍资料</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SQL工具、软件"><span class="nav-number">1.2.</span> <span class="nav-text">SQL工具、软件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mysql-workbench-使用实践"><span class="nav-number">2.</span> <span class="nav-text">Mysql workbench 使用实践</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LeetCode-中级题目解答"><span class="nav-number">3.</span> <span class="nav-text">LeetCode 中级题目解答</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-换座位"><span class="nav-number">3.1.</span> <span class="nav-text">1. 换座位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-分数排名"><span class="nav-number">3.2.</span> <span class="nav-text">2. 分数排名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-连续出现的数字"><span class="nav-number">3.3.</span> <span class="nav-text">3. 连续出现的数字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-第N高的薪水"><span class="nav-number">3.4.</span> <span class="nav-text">4. 第N高的薪水</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-部门工资最高的员工"><span class="nav-number">3.5.</span> <span class="nav-text">5.部门工资最高的员工</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#X-关键知识点"><span class="nav-number">3.6.</span> <span class="nav-text">X.  关键知识点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-SQL语句的执行顺序"><span class="nav-number">3.6.1.</span> <span class="nav-text">1. SQL语句的执行顺序:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-JOIN语句的使用"><span class="nav-number">3.6.2.</span> <span class="nav-text">2. JOIN语句的使用</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
