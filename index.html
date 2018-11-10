@@ -319,6 +319,396 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://sunrong.site/2018/11/03/mySQL数据库高级实践/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dave Sun">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/hero.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="The Path of Dave">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/03/mySQL数据库高级实践/" itemprop="url">
+                  mySQL数据库高级实践
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-11-03 09:02:27" itemprop="dateCreated datePublished" datetime="2018-11-03T09:02:27+08:00">2018-11-03</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-11-10 21:07:17" itemprop="dateModified" datetime="2018-11-10T21:07:17+08:00">2018-11-10</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/11/03/mySQL数据库高级实践/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">Comments: </span> <span class="post-comments-count valine-comment-count" data-xid="/2018/11/03/mySQL数据库高级实践/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/11/03/mySQL数据库高级实践/" class="leancloud_visitors" data-flag-title="mySQL数据库高级实践">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Views: </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="参考资料-工具"><a href="#参考资料-工具" class="headerlink" title="参考资料/工具"></a>参考资料/工具</h2><h3 id="SQL书籍资料"><a href="#SQL书籍资料" class="headerlink" title="SQL书籍资料"></a>SQL书籍资料</h3><ul>
+<li>英国Ben Forta的《SQL必知必会》 SQL的极好的入门教材，相见恨晚；</li>
+<li>英国Ben Forta《MySQl必知必会》，mySQL必读经典</li>
+<li>LeetCode 数据库高级练习题</li>
+<li><a href="https://dev.mysql.com/doc/refman/5.7/en/" target="_blank" rel="noopener">mysql官方文档</a><h3 id="SQL工具、软件"><a href="#SQL工具、软件" class="headerlink" title="SQL工具、软件"></a>SQL工具、软件</h3></li>
+<li>Mysql workbench 8.0版本，这款DBMS挺好用</li>
+<li>数据库软件 mysql 5.5 Server老版本，入门足够用，体积小，易安装</li>
+</ul>
+<h2 id="LeetCode-高级题目解答"><a href="#LeetCode-高级题目解答" class="headerlink" title="LeetCode 高级题目解答"></a>LeetCode 高级题目解答</h2><h3 id="1-体育馆的人流量"><a href="#1-体育馆的人流量" class="headerlink" title="1. 体育馆的人流量"></a>1. 体育馆的人流量</h3><table>
+<thead>
+<tr>
+<th>id</th>
+<th>date</th>
+<th>people</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>2017-01-01</td>
+<td>10</td>
+</tr>
+<tr>
+<td>2</td>
+<td>2017-01-02</td>
+<td>109</td>
+</tr>
+<tr>
+<td>3</td>
+<td>2017-01-03</td>
+<td>150</td>
+</tr>
+<tr>
+<td>4</td>
+<td>2017-01-04</td>
+<td>99</td>
+</tr>
+<tr>
+<td>5</td>
+<td>2017-01-05</td>
+<td>145</td>
+</tr>
+<tr>
+<td>6</td>
+<td>2017-01-06</td>
+<td>1455</td>
+</tr>
+<tr>
+<td>7</td>
+<td>2017-01-07</td>
+<td>199</td>
+</tr>
+<tr>
+<td>8</td>
+<td>2017-01-08</td>
+<td>188</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>找出高峰期时段，要求连续三天及以上，并且每天人流量均不少于100。</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 知识点：Join的原理；三个连续选择的算法；</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span></span><br><span class="line">    s1.*</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">    stadium <span class="keyword">AS</span> s1,</span><br><span class="line">    stadium <span class="keyword">AS</span> s2,</span><br><span class="line">    stadium <span class="keyword">AS</span> s3</span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">    s1.people &gt;= <span class="number">100</span> <span class="keyword">AND</span> s2.people &gt;= <span class="number">100</span></span><br><span class="line">        <span class="keyword">AND</span> s3.people &gt;= <span class="number">100</span></span><br><span class="line">        <span class="keyword">AND</span> ((s1.id = s2.id + <span class="number">1</span> <span class="keyword">AND</span> s1.id = s3.id + <span class="number">2</span>)</span><br><span class="line">        <span class="keyword">OR</span> (s1.id = s2.id - <span class="number">1</span> <span class="keyword">AND</span> s1.id = s3.id - <span class="number">2</span>)</span><br><span class="line">        <span class="keyword">OR</span> (s1.id = s2.id + <span class="number">1</span> <span class="keyword">AND</span> s1.id = s3.id - <span class="number">1</span>))</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> s1.id</span><br></pre></td></tr></table></figure>
+<h3 id="2-行程和用户"><a href="#2-行程和用户" class="headerlink" title="2. 行程和用户"></a>2. 行程和用户</h3><table>
+<thead>
+<tr>
+<th>Id</th>
+<th>Client_Id</th>
+<th>Driver_Id</th>
+<th>City_Id</th>
+<th>Status</th>
+<th>Request_at</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>10</td>
+<td>1</td>
+<td>completed</td>
+<td>2013-10-01</td>
+</tr>
+<tr>
+<td>2</td>
+<td>2</td>
+<td>11</td>
+<td>1</td>
+<td>cancelled_by_driver</td>
+<td>2013-10-01</td>
+</tr>
+<tr>
+<td>3</td>
+<td>3</td>
+<td>12</td>
+<td>6</td>
+<td>completed</td>
+<td>2013-10-01</td>
+</tr>
+<tr>
+<td>4</td>
+<td>4</td>
+<td>13</td>
+<td>6</td>
+<td>cancelled_by_client</td>
+<td>2013-10-01</td>
+</tr>
+<tr>
+<td>5</td>
+<td>1</td>
+<td>10</td>
+<td>1</td>
+<td>completed</td>
+<td>2013-10-02</td>
+</tr>
+<tr>
+<td>6</td>
+<td>2</td>
+<td>11</td>
+<td>6</td>
+<td>completed</td>
+<td>2013-10-02</td>
+</tr>
+<tr>
+<td>7</td>
+<td>3</td>
+<td>12</td>
+<td>6</td>
+<td>completed</td>
+<td>2013-10-02</td>
+</tr>
+<tr>
+<td>8</td>
+<td>2</td>
+<td>12</td>
+<td>12</td>
+<td>completed</td>
+<td>2013-10-03</td>
+</tr>
+<tr>
+<td>9</td>
+<td>3</td>
+<td>10</td>
+<td>12</td>
+<td>completed</td>
+<td>2013-10-03</td>
+</tr>
+<tr>
+<td>10</td>
+<td>4</td>
+<td>13</td>
+<td>12</td>
+<td>cancelled_by_driver</td>
+<td>2013-10-03</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Users_Id</th>
+<th>Banned</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>No</td>
+<td>client</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Yes</td>
+<td>client</td>
+</tr>
+<tr>
+<td>3</td>
+<td>No</td>
+<td>client</td>
+</tr>
+<tr>
+<td>4</td>
+<td>No</td>
+<td>client</td>
+</tr>
+<tr>
+<td>10</td>
+<td>No</td>
+<td>driver</td>
+</tr>
+<tr>
+<td>11</td>
+<td>No</td>
+<td>driver</td>
+</tr>
+<tr>
+<td>12</td>
+<td>No</td>
+<td>driver</td>
+</tr>
+<tr>
+<td>13</td>
+<td>No</td>
+<td>driver</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>每段行程有唯一键 Id，Client_Id 和 Driver_Id 是 <code>Users</code> 表中 Users_Id 的外键。Status 是枚举类型，枚举成员为 (‘completed’, ‘cancelled_by_driver’, ‘cancelled_by_client’)。</li>
+<li><code>Users</code> 表存所有用户。每个用户有唯一键 Users_Id。Banned 表示这个用户是否被禁止，Role 则是一个表示（‘client’, ‘driver’, ‘partner’）的枚举类型。</li>
+<li>查出  <strong>2013年10月1日</strong> 至 <strong>2013年10月3日</strong>期间非禁止用户的取消率</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- SUM聚类函数的使用；Round函数的使用；IF条件语句的使用；日期的比较；In的使用</span></span><br><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    Request_at <span class="keyword">AS</span> <span class="keyword">Day</span>,</span><br><span class="line">    <span class="keyword">ROUND</span>(<span class="keyword">SUM</span>(<span class="keyword">IF</span>(trips.Status = <span class="string">'cancelled_by_client'</span></span><br><span class="line">                    <span class="keyword">OR</span> trips.Status = <span class="string">'cancelled_by_driver'</span>,</span><br><span class="line">                <span class="number">1</span>,</span><br><span class="line">                <span class="number">0</span>)) / <span class="keyword">COUNT</span>(*),</span><br><span class="line">            <span class="number">2</span>) <span class="keyword">AS</span> <span class="string">'Cancellation Rate'</span></span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">    test.trips</span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">    trips.Client_Id <span class="keyword">NOT</span> <span class="keyword">IN</span> (<span class="keyword">SELECT</span> </span><br><span class="line">            users.Users_Id</span><br><span class="line">        <span class="keyword">FROM</span></span><br><span class="line">            <span class="keyword">users</span></span><br><span class="line">        <span class="keyword">WHERE</span></span><br><span class="line">            users.Banned = <span class="string">'YES'</span>)</span><br><span class="line">        <span class="keyword">AND</span> Request_at <span class="keyword">BETWEEN</span> <span class="string">'2013-10-01'</span> <span class="keyword">AND</span> <span class="string">'2013-10-03'</span></span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> trips.Request_at</span><br></pre></td></tr></table></figure>
+<h3 id="3-部门工资前三高的员工"><a href="#3-部门工资前三高的员工" class="headerlink" title="3. 部门工资前三高的员工"></a>3. 部门工资前三高的员工</h3><p><code>Employee</code> 表包含所有员工信息<br>| Id | Name  | Salary | DepartmentId |<br>|—-|——-|——–|————–|<br>| 1  | Joe   | 70000  | 1            |<br>| 2  | Henry | 80000  | 2            |<br>| 3  | Sam   | 60000  | 2            |<br>| 4  | Max   | 90000  | 1            |<br>| 5  | Janet | 69000  | 1            |<br>| 6  | Randy | 85000  | 1            |</p>
+<p><code>Department</code> 表包含公司所有部门的信息<br>| Id | Name     |<br>|—-|———-|<br>| 1  | IT       |<br>| 2  | Sales    |</p>
+<p>找出每个部门工资前三高的员工</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">-- 非常经典的SQL题目，使用JOIN和自连接进行筛选；都是老知识点的组合使用</span></span><br><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    department.Name <span class="keyword">AS</span> Department, e1.Name <span class="keyword">AS</span> Employee, Salary</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">    employee <span class="keyword">AS</span> e1</span><br><span class="line">        <span class="keyword">LEFT</span> <span class="keyword">JOIN</span></span><br><span class="line">    department <span class="keyword">ON</span> e1.DepartmentId = department.id</span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">    (<span class="keyword">SELECT</span> </span><br><span class="line">            <span class="keyword">COUNT</span>(<span class="keyword">DISTINCT</span> e2.Salary)</span><br><span class="line">        <span class="keyword">FROM</span></span><br><span class="line">            employee <span class="keyword">AS</span> e2</span><br><span class="line">        <span class="keyword">WHERE</span></span><br><span class="line">            e2.Salary &gt; e1.Salary</span><br><span class="line">                <span class="keyword">AND</span> e1.DepartmentID = e2.DepartmentID) &lt; <span class="number">3</span></span><br><span class="line">        <span class="keyword">AND</span> department.Name <span class="keyword">IS</span> <span class="keyword">NOT</span> <span class="literal">NULL</span></span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> department.Name , e1.Salary <span class="keyword">DESC</span></span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://sunrong.site/2018/10/23/mySQL数据库中级实践/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -382,7 +772,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-11-03 08:57:42" itemprop="dateModified" datetime="2018-11-03T08:57:42+08:00">2018-11-03</time>
+                <time title="Modified: 2018-11-03 08:58:42" itemprop="dateModified" datetime="2018-11-03T08:58:42+08:00">2018-11-03</time>
               
             
           </span>
@@ -454,7 +844,7 @@
 <li>新开SQL编辑器 Ctrl + T</li>
 <li>查看执行解释 (explain current statement) Ctrl + Alt + X</li>
 </ul>
-<h2 id="LeetCode-中级题目解答"><a href="#LeetCode-中级题目解答" class="headerlink" title="LeetCode 中级题目解答"></a>LeetCode 中级题目解答</h2>
+<h2 id="LeetCode-中级题目解答"><a href="#LeetCode-中级题目解答" class="headerlink" title="LeetCode 中级题目解答"></a>LeetCode 中级题目解答</h2><h3 id="1-换座位"><a href="#1-换座位" class="headerlink" title="1. 换座位"></a>1. 换座位</h3>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2018/10/23/mySQL数据库中级实践/#more" rel="contents">
@@ -1480,7 +1870,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-count">7</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
