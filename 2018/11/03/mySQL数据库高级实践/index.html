@@ -114,7 +114,7 @@
 <meta property="og:site_name" content="The Path of Dave">
 <meta property="og:description" content="参考资料/工具SQL书籍资料 英国Ben Forta的《SQL必知必会》 SQL的极好的入门教材，相见恨晚； 英国Ben Forta《MySQl必知必会》，mySQL必读经典 LeetCode 数据库高级练习题 mysql官方文档SQL工具、软件 Mysql workbench 8.0版本，这款DBMS挺好用 数据库软件 mysql 5.5 Server老版本，入门足够用，体积小，易安装  Lee">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-11-10T13:07:17.688Z">
+<meta property="og:updated_time" content="2018-11-10T13:15:34.562Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mySQL数据库高级实践">
 <meta name="twitter:description" content="参考资料/工具SQL书籍资料 英国Ben Forta的《SQL必知必会》 SQL的极好的入门教材，相见恨晚； 英国Ben Forta《MySQl必知必会》，mySQL必读经典 LeetCode 数据库高级练习题 mysql官方文档SQL工具、软件 Mysql workbench 8.0版本，这款DBMS挺好用 数据库软件 mysql 5.5 Server老版本，入门足够用，体积小，易安装  Lee">
@@ -382,7 +382,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-11-10 21:07:17" itemprop="dateModified" datetime="2018-11-10T21:07:17+08:00">2018-11-10</time>
+                <time title="Modified: 2018-11-10 21:15:34" itemprop="dateModified" datetime="2018-11-10T21:15:34+08:00">2018-11-10</time>
               
             
           </span>
@@ -650,8 +650,74 @@
 <li>查出  <strong>2013年10月1日</strong> 至 <strong>2013年10月3日</strong>期间非禁止用户的取消率</li>
 </ul>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- SUM聚类函数的使用；Round函数的使用；IF条件语句的使用；日期的比较；In的使用</span></span><br><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    Request_at <span class="keyword">AS</span> <span class="keyword">Day</span>,</span><br><span class="line">    <span class="keyword">ROUND</span>(<span class="keyword">SUM</span>(<span class="keyword">IF</span>(trips.Status = <span class="string">'cancelled_by_client'</span></span><br><span class="line">                    <span class="keyword">OR</span> trips.Status = <span class="string">'cancelled_by_driver'</span>,</span><br><span class="line">                <span class="number">1</span>,</span><br><span class="line">                <span class="number">0</span>)) / <span class="keyword">COUNT</span>(*),</span><br><span class="line">            <span class="number">2</span>) <span class="keyword">AS</span> <span class="string">'Cancellation Rate'</span></span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">    test.trips</span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">    trips.Client_Id <span class="keyword">NOT</span> <span class="keyword">IN</span> (<span class="keyword">SELECT</span> </span><br><span class="line">            users.Users_Id</span><br><span class="line">        <span class="keyword">FROM</span></span><br><span class="line">            <span class="keyword">users</span></span><br><span class="line">        <span class="keyword">WHERE</span></span><br><span class="line">            users.Banned = <span class="string">'YES'</span>)</span><br><span class="line">        <span class="keyword">AND</span> Request_at <span class="keyword">BETWEEN</span> <span class="string">'2013-10-01'</span> <span class="keyword">AND</span> <span class="string">'2013-10-03'</span></span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> trips.Request_at</span><br></pre></td></tr></table></figure>
-<h3 id="3-部门工资前三高的员工"><a href="#3-部门工资前三高的员工" class="headerlink" title="3. 部门工资前三高的员工"></a>3. 部门工资前三高的员工</h3><p><code>Employee</code> 表包含所有员工信息<br>| Id | Name  | Salary | DepartmentId |<br>|—-|——-|——–|————–|<br>| 1  | Joe   | 70000  | 1            |<br>| 2  | Henry | 80000  | 2            |<br>| 3  | Sam   | 60000  | 2            |<br>| 4  | Max   | 90000  | 1            |<br>| 5  | Janet | 69000  | 1            |<br>| 6  | Randy | 85000  | 1            |</p>
-<p><code>Department</code> 表包含公司所有部门的信息<br>| Id | Name     |<br>|—-|———-|<br>| 1  | IT       |<br>| 2  | Sales    |</p>
+<h3 id="3-部门工资前三高的员工"><a href="#3-部门工资前三高的员工" class="headerlink" title="3. 部门工资前三高的员工"></a>3. 部门工资前三高的员工</h3><p><code>Employee</code> 表包含所有员工信息</p>
+<table>
+<thead>
+<tr>
+<th>Id</th>
+<th>Name</th>
+<th>Salary</th>
+<th>DepartmentId</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Joe</td>
+<td>70000</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Henry</td>
+<td>80000</td>
+<td>2</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Sam</td>
+<td>60000</td>
+<td>2</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Max</td>
+<td>90000</td>
+<td>1</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Janet</td>
+<td>69000</td>
+<td>1</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Randy</td>
+<td>85000</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p><code>Department</code> 表包含公司所有部门的信息</p>
+<table>
+<thead>
+<tr>
+<th>Id</th>
+<th>Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>IT</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Sales</td>
+</tr>
+</tbody>
+</table>
 <p>找出每个部门工资前三高的员工</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">-- 非常经典的SQL题目，使用JOIN和自连接进行筛选；都是老知识点的组合使用</span></span><br><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">    department.Name <span class="keyword">AS</span> Department, e1.Name <span class="keyword">AS</span> Employee, Salary</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">    employee <span class="keyword">AS</span> e1</span><br><span class="line">        <span class="keyword">LEFT</span> <span class="keyword">JOIN</span></span><br><span class="line">    department <span class="keyword">ON</span> e1.DepartmentId = department.id</span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">    (<span class="keyword">SELECT</span> </span><br><span class="line">            <span class="keyword">COUNT</span>(<span class="keyword">DISTINCT</span> e2.Salary)</span><br><span class="line">        <span class="keyword">FROM</span></span><br><span class="line">            employee <span class="keyword">AS</span> e2</span><br><span class="line">        <span class="keyword">WHERE</span></span><br><span class="line">            e2.Salary &gt; e1.Salary</span><br><span class="line">                <span class="keyword">AND</span> e1.DepartmentID = e2.DepartmentID) &lt; <span class="number">3</span></span><br><span class="line">        <span class="keyword">AND</span> department.Name <span class="keyword">IS</span> <span class="keyword">NOT</span> <span class="literal">NULL</span></span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> department.Name , e1.Salary <span class="keyword">DESC</span></span><br></pre></td></tr></table></figure>
 
@@ -696,6 +762,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/11/12/freeCodeCamp-Html-CSS-Jquery基础-Tribute/" rel="prev" title="freeCodeCamp Html+CSS+Jquery基础-Tribute">
+                freeCodeCamp Html+CSS+Jquery基础-Tribute <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -772,7 +842,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-count">8</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -812,7 +882,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">5</span>
+                      
+                    
+                    <span class="site-state-item-count">6</span>
                     <span class="site-state-item-name">tags</span>
                   
                 </div>
@@ -868,6 +940,14 @@
                 
                   <li class="links-of-blogroll-item">
                     <a href="https://ken.io/" title="Ken的博客.net/java" target="_blank">Ken的博客.net/java</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dreamerwinston.github.io/blog/" title="全栈winston" target="_blank">全栈winston</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://me.csdn.net/alitech2017" title="阿里CSDN" target="_blank">阿里CSDN</a>
                   </li>
                 
               </ul>
