@@ -106,24 +106,28 @@
 
 
 
-  <meta name="description" content="Dave的个人成长的博客">
+  <meta name="description" content=".net 的垃圾回收机制GC对象的生命">
 <meta name="keywords" content="个人成长 程序员 产品经理">
-<meta property="og:type" content="website">
-<meta property="og:title" content="The Path of Dave">
-<meta property="og:url" content="https://www.sunrong.site/archives/2018/11/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content=".dotNet编程学习">
+<meta property="og:url" content="https://www.sunrong.site/2018/09/22/dotNet编程学习/index.html">
 <meta property="og:site_name" content="The Path of Dave">
-<meta property="og:description" content="Dave的个人成长的博客">
+<meta property="og:description" content=".net 的垃圾回收机制GC对象的生命">
 <meta property="og:locale" content="cn">
+<meta property="og:image" content="https://www.sunrong.site/2018/09/22/dotNet编程学习/img/GC算法.png">
+<meta property="og:image" content="https://www.sunrong.site/2018/09/22/dotNet编程学习/img/GC分代.png">
+<meta property="og:updated_time" content="2020-11-01T14:13:18.377Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="The Path of Dave">
-<meta name="twitter:description" content="Dave的个人成长的博客">
+<meta name="twitter:title" content=".dotNet编程学习">
+<meta name="twitter:description" content=".net 的垃圾回收机制GC对象的生命">
+<meta name="twitter:image" content="https://www.sunrong.site/2018/09/22/dotNet编程学习/img/GC算法.png">
 
 
 
 
 
 
-  <link rel="canonical" href="https://www.sunrong.site/archives/2018/11/"/>
+  <link rel="canonical" href="https://www.sunrong.site/2018/09/22/dotNet编程学习/"/>
 
 
 
@@ -133,7 +137,7 @@
   };
 </script>
 
-  <title>Archiv | The Path of Dave</title>
+  <title>.dotNet编程学习 | The Path of Dave</title>
   
 
 
@@ -180,7 +184,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 	<a href="https://github.com/sunrong1990" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#70B7FD; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -229,7 +233,7 @@
         
         
           
-          <li class="menu-item menu-item-archives menu-item-active">
+          <li class="menu-item menu-item-archives">
     <a href="/archives/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archiv</a>
   </li>
@@ -286,106 +290,305 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
 
-      
-      <span class="archive-page-counter">
-        
-        
-        
-          
-        
-        Öhm..! Insgesamt 15 Artikel. Bleib dran.
-      </span>
-      
-
-      
-
-        
-        
-        
-
-        
-          
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
-
-        
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.sunrong.site/2018/09/22/dotNet编程学习/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dave Sun">
+      <meta itemprop="description" content="Dave的个人成长的博客">
+      <meta itemprop="image" content="/images/hero.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="The Path of Dave">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/11/21/freecodecamp-Web编程/" itemprop="url">
-              
-                <span itemprop="name">freecodecamp Javascript基础</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">.dotNet编程学习
+              
+            
+          </h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-11-21T22:55:13+08:00"
-              content="2018-11-21" >
-          11-21
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
 
-    </header>
-  </article>
+            
+            
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
 
+              
+                
+              
+
+              <time title="Post created: 2018-09-22 16:26:30" itemprop="dateCreated datePublished" datetime="2018-09-22T16:26:30+08:00">2018-09-22</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Updated at: 2020-11-01 22:13:18" itemprop="dateModified" datetime="2020-11-01T22:13:18+08:00">2020-11-01</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">in</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Profession/" itemprop="url" rel="index"><span itemprop="name">Profession</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/09/22/dotNet编程学习/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">Comments: </span> <span class="post-comments-count valine-comment-count" data-xid="/2018/09/22/dotNet编程学习/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/09/22/dotNet编程学习/" class="leancloud_visitors" data-flag-title=".dotNet编程学习">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Views: </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
+      
 
+      
+        <h2 id="net-的垃圾回收机制GC"><a href="#net-的垃圾回收机制GC" class="headerlink" title=".net 的垃圾回收机制GC"></a>.net 的垃圾回收机制GC</h2><h3 id="对象的生命"><a href="#对象的生命" class="headerlink" title="对象的生命"></a>对象的生命</h3><a id="more"></a>
+<p>一个对象的生命周期简单概括就是：创建&gt;使用&gt;释放，在.NET中一个对象的生命周期：</p>
+<ol>
+<li>new创建对象并分配内存；</li>
+<li>对象初始化；</li>
+<li>对象操作、使用；</li>
+<li>资源清理（Managed Resources）；</li>
+<li>GC垃圾回收（Unmanaged Resources）；</li>
+</ol>
+<p>用C++进行编程，内存的处理绝对是让每个程序设计者最头疼的一块了。但是对于.net平台下使用c#语言开发系统，内存管理可以说已经不算是问题了。在.net平台下CLR负责管理内存，CLR中的垃圾收集器GC：Garbage Collection，负责执行内存的清理工作，但是GC也只是负责清理托管堆上的垃圾对象，而对于非托管的资源对象，GC则不起作用，必须要程序开发者手动清理。对于Stream，数据库的连接，GDI+的相关对象，还有Com对象等等，这些资源并不是受到.Net管理而统称为非托管资源，非托管资源需要手动显式进行释放。</p>
+<h3 id="GC原理简介"><a href="#GC原理简介" class="headerlink" title="GC原理简介"></a>GC原理简介</h3><p>GC是垃圾回收（Garbage Collect）的缩写，是.NET核心机制的重要部分。基本工作原理可看做是Mark-Compact算法，就是遍历托管堆中的对象，标记哪些被使用对象（那些没人使用的就是所谓的垃圾），然后把可达对象转移到一个连续的地址空间（也叫压缩），其余的所有没用的对象内存被回收掉。<br>为了实现这个原理，GC有多种算法。比较常见的算法有Reference Counting，Mark &amp; Sweep等等。<br>目前主流的虚拟系统.NET CLR，Java VM都是采用的Mark Sweep算法。</p>
+<p><img src="/2018/09/22/dotNet编程学习/img/GC算法.png" alt="GC 算法"></p>
+<h3 id="CLR-内存管理概念"><a href="#CLR-内存管理概念" class="headerlink" title="CLR 内存管理概念"></a>CLR <a href="https://docs.microsoft.com/en-us/dotnet/standard/garbage-collection/fundamentals" target="_blank" rel="noopener">内存管理概念</a></h3><ol>
+<li>Each process has its own, separate virtual address space.</li>
+<li>空间限制 By default, on 32-bit computers, each process has a 2-GB user-mode virtual address space.</li>
+<li>虚拟内存的三个状态:</li>
+</ol>
+<ul>
+<li>Free. The block of memory has no references to it and is available for allocation.</li>
+<li>Reserved. The block of memory is available for your use and cannot be used for any other allocation request. However, you cannot store data to this memory block until it is committed.</li>
+<li>Committed. The block of memory is assigned to physical storage.</li>
+</ul>
+<ol start="4">
+<li>内存空间可能产生碎片 Virtual address space can get fragmented. This means that there are free blocks, also known as holes, in the address space. When a virtual memory allocation is requested, the virtual memory manager has to find a single free block that is large enough to satisfy that allocation request. Even if you have 2 GB of free space, the allocation that requires 2 GB will be unsuccessful unless all of that free space is in a single address block.</li>
+<li><p>可能会产生内存泄漏 You can run out of memory if you run out of virtual address space to reserve or physical space to commit.</p>
+<h3 id="托管堆-Managed-Heap"><a href="#托管堆-Managed-Heap" class="headerlink" title="托管堆  Managed Heap"></a>托管堆  Managed Heap</h3><p>After the garbage collector is initialized by the CLR, it allocates a segment of memory to store and manage objects. This memory is called the managed heap, as opposed to a native heap in the operating system.<br>.NET的垃圾收集器将对象分为三代（Generation0,Generation1,Generation2）。不同的代里面的内容如下：</p>
+</li>
+<li><p>G0 小对象(Size&lt;85000Byte)：新分配的小于85000字节的对象。</p>
+</li>
+<li>G1:在GC中幸存下来的G0对象</li>
+<li>G2:大对象(Size&gt;=85000Byte);在GC中幸存下来的G1对象</li>
+</ol>
+<p><img src="/2018/09/22/dotNet编程学习/img/GC分代.png" alt="GC 分代"></p>
+<p>CLR会管理两种类型的堆，小对象堆（small object heap，SOH）和大对象堆（large object heap，LOH），其中所有大于85000byte的内存分配都会在LOH上进行。　　<br>代收集规则：当一个代N被收集以后，在这个代里的幸存下来的对象会被标记为N+1代的对象。GC对不同代的对象执行不同的检查策略以优化性能。每个GC周期都会检查第0代对象。大约1/10的GC周期检查第0代和第1代对象。大约1/100的GC周期检查所有的对象。</p>
+
+      
     </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechat.png" alt="Dave Sun WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="Dave Sun Alipay"/>
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/17/Hexo建站实践总结/" rel="next" title="Hexo建站实践总结">
+                <i class="fa fa-chevron-left"></i> Hexo建站实践总结
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/10/11/数据库学习和练习/" rel="prev" title="我的数据库基础练习">
+                我的数据库基础练习 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+	  <div>    
+	 
+	 
+	<ul class="post-copyright">
+	  <li class="post-copyright-author">
+		  <strong>本文作者：</strong>Dave Sun
+	  </li>
+	  <li class="post-copyright-link">
+		<strong>本文链接：</strong>
+		<a href="/2018/09/22/dotNet编程学习/" title=".dotNet编程学习">2018/09/22/dotNet编程学习/</a>
+	  </li>
+	  <li class="post-copyright-license">
+		<strong>版权： </strong>
+		本站文章均采用 <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0 CN</a> 许可协议，请勿用于商业，转载注明出处！
+	  </li>
+	</ul>
+	
+	</div>
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -406,8 +609,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Übersicht
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -595,6 +807,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#net-的垃圾回收机制GC"><span class="nav-number">1.</span> <span class="nav-text">.net 的垃圾回收机制GC</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#对象的生命"><span class="nav-number">1.1.</span> <span class="nav-text">对象的生命</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GC原理简介"><span class="nav-number">1.2.</span> <span class="nav-text">GC原理简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CLR-内存管理概念"><span class="nav-number">1.3.</span> <span class="nav-text">CLR 内存管理概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#托管堆-Managed-Heap"><span class="nav-number">1.4.</span> <span class="nav-text">托管堆  Managed Heap</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -756,6 +984,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.1"></script>
+
+
 
   
 
