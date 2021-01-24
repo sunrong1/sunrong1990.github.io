@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.4.1" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/hero-32x32-next.jpg?v=6.4.1">
+
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.4.1" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.4.1',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="参考资料/工具CSS书籍资料 Edx CSS基础课程 W3C CSS2.2标准 FreeCodeCamp中文官网 FreeCodeCamp英文官网 前端前辈的经验总结：如何在一年之内通过自学找到Web开发工作 Bootstrap 菜鸟教程 Html +CSS菜鸟教程 [《从0到1 HTML+CSS快速上手》] 2020年11月  HTML 工具、软件 W3C协议快捷搜索 W3C为Web开发者提供了">
+<meta name="keywords" content="个人成长 程序员 产品经理">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端实践">
+<meta property="og:url" content="https://www.sunrong.site/2018/12/16/前端实践/index.html">
+<meta property="og:site_name" content="The Path of Dave">
+<meta property="og:description" content="参考资料/工具CSS书籍资料 Edx CSS基础课程 W3C CSS2.2标准 FreeCodeCamp中文官网 FreeCodeCamp英文官网 前端前辈的经验总结：如何在一年之内通过自学找到Web开发工作 Bootstrap 菜鸟教程 Html +CSS菜鸟教程 [《从0到1 HTML+CSS快速上手》] 2020年11月  HTML 工具、软件 W3C协议快捷搜索 W3C为Web开发者提供了">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://www.w3.org/TR/CSS22/images/boxdim.png">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1510150-7c791d14296723a7.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/469/format/webp">
+<meta property="og:image" content="https://images0.cnblogs.com/blog/270324/201402/191935386296017.jpg">
+<meta property="og:updated_time" content="2021-01-24T02:41:57.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端实践">
+<meta name="twitter:description" content="参考资料/工具CSS书籍资料 Edx CSS基础课程 W3C CSS2.2标准 FreeCodeCamp中文官网 FreeCodeCamp英文官网 前端前辈的经验总结：如何在一年之内通过自学找到Web开发工作 Bootstrap 菜鸟教程 Html +CSS菜鸟教程 [《从0到1 HTML+CSS快速上手》] 2020年11月  HTML 工具、软件 W3C协议快捷搜索 W3C为Web开发者提供了">
+<meta name="twitter:image" content="https://www.w3.org/TR/CSS22/images/boxdim.png">
+
+
+
+
+
+
+  <link rel="canonical" href="https://www.sunrong.site/2018/12/16/前端实践/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>前端实践 | The Path of Dave</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+	<a href="https://github.com/sunrong1990" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#70B7FD; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">The Path of Dave</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">分享我的知识和实践</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-schedule">
+    <a href="/schedule/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />日程表</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.sunrong.site/2018/12/16/前端实践/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dave Sun">
+      <meta itemprop="description" content="Dave的个人成长的博客">
+      <meta itemprop="image" content="/images/hero.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="The Path of Dave">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">前端实践
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-12-16 21:47:33" itemprop="dateCreated datePublished" datetime="2018-12-16T21:47:33+08:00">2018-12-16</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2021-01-24 10:41:57" itemprop="dateModified" datetime="2021-01-24T10:41:57+08:00">2021-01-24</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Profession/" itemprop="url" rel="index"><span itemprop="name">Profession</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/12/16/前端实践/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/12/16/前端实践/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/12/16/前端实践/" class="leancloud_visitors" data-flag-title="前端实践">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="参考资料-工具"><a href="#参考资料-工具" class="headerlink" title="参考资料/工具"></a>参考资料/工具</h2><h3 id="CSS书籍资料"><a href="#CSS书籍资料" class="headerlink" title="CSS书籍资料"></a>CSS书籍资料</h3><ul>
+<li><a href="https://courses.edx.org/courses/course-v1:W3Cx+CSS.0x+3T2018/course/" target="_blank" rel="noopener">Edx CSS基础课程</a></li>
+<li><a href="https://www.w3.org/TR/2016/WD-CSS22-20160412/" target="_blank" rel="noopener">W3C CSS2.2标准</a></li>
+<li><a href="https://www.freecodecamp.cn" target="_blank" rel="noopener">FreeCodeCamp</a>中文官网</li>
+<li><a href="https://learn.freecodecamp.org/" target="_blank" rel="noopener">FreeCodeCamp</a>英文官网</li>
+<li>前端前辈的经验总结：<a href="https://zhuanlan.zhihu.com/p/22213177" target="_blank" rel="noopener">如何在一年之内通过自学找到Web开发工作</a></li>
+<li><a href="http://www.runoob.com/bootstrap/bootstrap-tutorial.html" target="_blank" rel="noopener">Bootstrap 菜鸟教程</a></li>
+<li><a href="http://www.runoob.com/html/html-tutorial.html" target="_blank" rel="noopener">Html +CSS菜鸟教程</a></li>
+<li>[《从0到1 HTML+CSS快速上手》] 2020年11月</li>
+</ul>
+<h3 id="HTML-工具、软件"><a href="#HTML-工具、软件" class="headerlink" title="HTML 工具、软件"></a>HTML 工具、软件</h3><ul>
+<li><a href="https://www.w3.org/2009/cheatsheet/#autocomplete" target="_blank" rel="noopener">W3C协议快捷搜索</a></li>
+<li>W3C为Web开发者提供了丰富的<a href="https://w3c.github.io/developers/" target="_blank" rel="noopener">一流的免费的工具</a>（👍）；</li>
+<li><a href="https://validator.w3.org/unicorn/check#" target="_blank" rel="noopener">W3C页面质量统一验证工具</a></li>
+<li><a href="https://validator.w3.org/i18n-checker/" target="_blank" rel="noopener">W3C国际化检查工具</a></li>
+<li><a href="https://codepen.io" target="_blank" rel="noopener">codepen 在线Web作品练习</a></li>
+<li>Sublime工具/VSCODE，chrome</li>
+</ul>
+<a id="more"></a>
+<h2 id="学习进展"><a href="#学习进展" class="headerlink" title="学习进展"></a>学习进展</h2><ol>
+<li><p>2018年底 基础学习；</p>
+</li>
+<li><p>2020年底 项目用到，重新梳理学习；<br>2周左右的时间，复习相关HTML+CSS的基础知识；<br>GULP的学习和使用；<br>BoostStrap 4的学习；</p>
+</li>
+</ol>
+<h2 id="一-CSS盒模型"><a href="#一-CSS盒模型" class="headerlink" title="一. CSS盒模型"></a>一. CSS盒模型</h2><h3 id="1-官方解释"><a href="#1-官方解释" class="headerlink" title="1. 官方解释"></a>1. 官方解释</h3><p><a href="https://www.w3.org/TR/CSS22/box.html" target="_blank" rel="noopener">CSS2 Box Model</a></p>
+<p><img src="https://www.w3.org/TR/CSS22/images/boxdim.png" alt="CSS22 BoxModel"></p>
+<p>The CSS box model describes the rectangular boxes that are generated for elements in the <a href="https://www.w3.org/TR/CSS22/conform.html#doctree" target="_blank" rel="noopener">document tree</a> and laid out according to the <a href="https://www.w3.org/TR/CSS22/visuren.html" target="_blank" rel="noopener">visual formatting model</a>.</p>
+<p>设置对称原则<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123; <span class="attribute">margin</span>: <span class="number">2em</span> &#125;         <span class="comment">/* all margins set to 2em */</span></span><br><span class="line"><span class="selector-tag">body</span> &#123; <span class="attribute">margin</span>: <span class="number">1em</span> <span class="number">2em</span> &#125;     <span class="comment">/* top &amp; bottom = 1em, right &amp; left = 2em */</span></span><br><span class="line"><span class="selector-tag">body</span> &#123; <span class="attribute">margin</span>: <span class="number">1em</span> <span class="number">2em</span> <span class="number">3em</span> &#125; <span class="comment">/* top=1em, right=2em, bottom=3em, left=2em */</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h1</span> &#123;</span><br><span class="line"><span class="attribute">border-bottom</span>: <span class="number">20px</span> <span class="number">#ff0066</span> solid;</span><br><span class="line"><span class="attribute">margin-bottom</span>: <span class="number">10px</span>;</span><br><span class="line"><span class="attribute">padding</span>: <span class="number">5px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-其他解释"><a href="#2-其他解释" class="headerlink" title="2.其他解释"></a>2.其他解释</h3><p><img src="https://upload-images.jianshu.io/upload_images/1510150-7c791d14296723a7.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/469/format/webp" alt="margin and padding"><br>W3C组织建议把所有网页上的对像都放在一个盒(box)中，设计师可以通过创建定义来控制这个盒的属性.<br><img src="https://images0.cnblogs.com/blog/270324/201402/191935386296017.jpg" alt=""></p>
+<p>margin：层的边框以外留的空白<br>background-color：背景颜色<br>background-image：背景图片<br>padding：层的边框到层的内容之间的空白<br>border：边框<br>content：内容</p>
+<h2 id="二、定位CSS元素"><a href="#二、定位CSS元素" class="headerlink" title="二、定位CSS元素"></a>二、定位CSS元素</h2><h3 id="1-Pseudo-classes-伪类-Pseudo-elements"><a href="#1-Pseudo-classes-伪类-Pseudo-elements" class="headerlink" title="1. Pseudo-classes 伪类 Pseudo-elements"></a>1. Pseudo-classes 伪类 Pseudo-elements</h3><p>Pseudo-classes：<strong>select HTML elements based on their state as opposed to their HTML structure</strong>。</p>
+<ul>
+<li>grouping is done via the use of a “,”.</li>
+<li>“:active” is a pseudo-classs to react to user clicks, but not all pseudo-classes react to clicks.</li>
+<li>there are indeed pseudo-classes that can change the style of an element while it is displayed (:hover, :active), but that is not true of all pseudo-classes (:link, :visited).</li>
+<li>Pseudo-elements create abstractions about the document tree beyond those specified by the document language. For instance, document languages do not offer mechanisms to access the first letter or first line of an element’s content.</li>
+</ul>
+<p>Pseudo-classes classify elements on characteristics other than their name, attributes or content;</p>
+<p><a href="https://www.w3.org/TR/CSS22/selector.html#pseudo-class-selectors" target="_blank" rel="noopener">官方伪类</a><br><a href="https://www.w3.org/TR/CSS22/selector.html#link-pseudo-elements" target="_blank" rel="noopener">详细的官方指南pseudo-elements</a></p>
+<p>通用：<br>:hover {color:#FF00FF;}  /<em> 鼠标移动到链接上 </em>/<br>:active {color:#0000FF;}  /<em> 鼠标点击时 </em>/ 比如鼠标在Button上按住时<br>其他：<br>a:link {color:#000000;}      /<em> 未访问链接</em>/<br>a:visited {color:#00FF00;}  /<em> 已访问链接 </em>/<br>input:focus 激活态 input等，接受输入的状态</p>
+<h3 id="2-Contextual-selectors-上下文选择器-派生选择器"><a href="#2-Contextual-selectors-上下文选择器-派生选择器" class="headerlink" title="2. Contextual selectors 上下文选择器 派生选择器"></a>2. Contextual selectors 上下文选择器 派生选择器</h3><p>依赖于上下文关系来应用或者避免某项规则</p>
+<p>When you use two selectors separated by a space on a rule, you scope the rule to the elements that correspond to the selector on the right that are INSIDE the elements that correspond to the selector on the left.</p>
+<h3 id="选择器顺序-–cascading"><a href="#选择器顺序-–cascading" class="headerlink" title="选择器顺序 –cascading"></a>选择器顺序 –cascading</h3><p>层叠含义： CSS has a way to figure out which rule “wins” when styles are conflicting.The set of rules that govern how to decide which rule wins when multiple rules apply to the same HTML element.</p>
+<ul>
+<li>When pseudo-classes are applied this is more specific than without the pseudo-class. For example, p:hover will win over just p. </li>
+<li>Contextual selection is more specific because it scopes the rule to elements within a certain subset of those on the page. For example, a rule that applies to all the paragraphs within articles is more specific than a rule that applies to all the paragraphs on the page.</li>
+<li>IDs are most specific because you are directly applying them to the desired HTML element. The rule based on an ID will always win over other rules。（除important外最）</li>
+</ul>
+<p>CSS覆盖规则: !important &gt;内联样式&gt;  id声明样式 &gt;pseudo-classes&gt;上下文选择器&gt;排在后面声明的style &gt; 排在前面的style &gt; 继承的父类的</p>
+<h2 id="三、Layout-and-Position"><a href="#三、Layout-and-Position" class="headerlink" title="三、Layout and Position"></a>三、Layout and Position</h2><h3 id="1-alignment-property"><a href="#1-alignment-property" class="headerlink" title="1. alignment property"></a>1. alignment property</h3><p> One of the simplest ways to align content is to use the direct text-align property. This can help you set the alignment of text or inline content within the context of their containing HTML element.<br> If you want to use this to position an inline element, such as img or a, you will need to tell CSS to treat them as block elements by setting display: block;</p>
+<p><strong>Inline content is affected by the text-align property. The margins on the block do not influence the alignment of inline content.</strong><br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h1</span> &#123;</span><br><span class="line"><span class="attribute">text-align</span>:left;</span><br><span class="line"><span class="attribute">line-height</span>: <span class="number">1.2</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Things are a bit more complicated with using a percentage to set an element’s height. This is because typically the body’s height is not specified, so if you use a percentage the size won’t adjust.</p>
+<p>we can practice in <a href="https://codepen.io/davesun/pen/PXNgVK" target="_blank" rel="noopener">mypen</a></p>
+<p>Inline content is affected by the text-align property. The margins on the block do not influence the alignment of inline content.</p>
+<h3 id="2-“float“-property-—-very-useful"><a href="#2-“float“-property-—-very-useful" class="headerlink" title="2. “float“ property —- very useful"></a>2. “float“ property —- very useful</h3><p>float最初的应用就是文字环绕效果，这对图文并茂的文章很有用。<br><a href="http://luopq.com/2015/11/08/CSS-float/" target="_blank" rel="noopener">CSS详解</a><br>If your elements are still not exactly where you want them to be after adjusting the padding, margins and alignment, then you can try out the float property. The “float” property is one of the most powerful tools you can master when learning CSS.1.</p>
+<p>Up until now, we haven’t moved elements very far from wherever the web browser automatically places them, but as you’ve probably noticed this has left our page very left side heavy. This is because, by default, elements are stacked one on top of the other, and they don’t share horizontal space. With the float property, we can change this.</p>
+<p>This is <a href="https://codepen.io/davesun/pen/VqaRVN" target="_blank" rel="noopener">mypen</a> in practice V4.3.</p>
+<p>clear 属性指定元素 (两侧both)侧不能出现浮动元素。</p>
+<h3 id="3-”position“-property"><a href="#3-”position“-property" class="headerlink" title="3. ”position“ property"></a>3. ”position“ property</h3><p>The “position” property sets the algorithm for how the Web browser will compute the way the HTML elements are placed on the page. There are four different value options for the position property:</p>
+<ul>
+<li><strong>relative</strong> - This is the position setting we will be discussing in detail as it is the best way to build on the dynamic layout methods we have learned thus far. This lets you specify where an HTML element should be relative to where it would be by default.</li>
+<li><strong>static</strong> - This is the default setting and will place an element wherever the web browser computes it should be. </li>
+<li><strong>fixed</strong> - This places an element in a specific location within the window. You can use this to set an element to remain where it is regardless of scrolling. This was used heavily when “frames” were popular, however now it should be used very sparingly. </li>
+<li><strong>absolute</strong> - This allows you to position elements relative to their containing box. This removes an element from its normal flow (just like a floating element) so it can be difficult to control and make a layout that is truly dynamic.</li>
+</ul>
+<p>Once you’ve set the position to “relative” that frees you up to set the <strong>top</strong>, <strong>right</strong>, <strong>bottom</strong> and <strong>left</strong> properties- otherwise known as the “box offsets”. These properties specify the distance between this object and its normal static position and the corner of the box that we are specifying.</p>
+<p>What is the best way to center the inline content, like text and images, horizontally within a block element? </p>
+<h3 id="4-The-layout-Advice-—-When-to-use-what"><a href="#4-The-layout-Advice-—-When-to-use-what" class="headerlink" title="4. The layout Advice —  When to use what?"></a>4. The layout Advice —  When to use what?</h3><ol>
+<li>Use padding and margin whenever you can. This will keep things simple in relation to the box model and the overall flow of elements in relation to one another.</li>
+<li>The float property is necessary when you want two block elements to share horizontal space. It can be easy to overuse the float property, keep in mind that if elements aren’t floating the way you want them to you might want to adjust their order in the HTML instead of applying float to more and more elements.</li>
+<li>If the above tools aren’t getting your element where it should be, you can use relative positioning and directly set the box offsets (top, bottom, left, right). This makes things a bit more complicated especially when you try to inspect the box model around your element, but sometimes this is unavoidable because of collapsing margins. </li>
+<li>If all that is not enough, there are advanced CSS features such as flexbox, table layout, absolute positioning and grid layout. These will be taught in an advanced CSS course.</li>
+</ol>
+<!--more-->
+<h2 id="总结感谢"><a href="#总结感谢" class="headerlink" title="总结感谢"></a>总结感谢</h2><p>哇，CSS原来还有这么多知识，我居然真只学了皮毛，加油，这次再补充点知识。<br>“温故而知新，可以为师矣” 。孔老先生，有着自己深刻的感悟，我也有点体会了，是不是太晚了？还是多温故而知新。</p>
+<h2 id="W3C组织"><a href="#W3C组织" class="headerlink" title="W3C组织"></a>W3C组织</h2><p>全球Web标准的管理者。<br>As steward of global Web standards, W3C’s mission is to safeguard the openness, accessibility, and freedom of the World Wide Web from a technical perspective，Founded in 1994.<br><a href="http://www.w3.org/People/Berners-Lee/" target="_blank" rel="noopener">Tim Berners-Lee</a> wrote a <a href="http://www.w3.org/History/1989/proposal.html" target="_blank" rel="noopener">proposal</a> in 1989 for a system called the World Wide Web.He then created the first Web browser, server, and Web page. He wrote the first specifications for URLs, HTTP, and HTML.<br>When Håkon Lie and Bert Bos writted CSS, in October 1994, it quickly became the most popular.</p>
+<h2 id="Html-CSS的关系"><a href="#Html-CSS的关系" class="headerlink" title="Html CSS的关系"></a>Html CSS的关系</h2><p>在Web开发中，html 语言给Web网页的内容提供了组织结构和语义（每个部分的作用），CSS控制了内容的布置方式和外观，描述怎么显示Html文档。<br>In web development, HTML gives structure and semantics to a page’s content, and CSS controls the layout and appearance of it.<br>This section covers some of the basic tools developers use to create their own visual designs.<br>使用CSS的优势：</p>
+<ol>
+<li>比Html提供更强大的工具，对页面内容进行展示；</li>
+<li>内容和展示分离，使得一个CSS文件可以用于多个网页的展示，开发维护方便，更新方便。</li>
+<li>分离的另一个好处，给用户提供个性化显示方案，用户可以自由选择不同样式。</li>
+<li>可提高页面加载速度</li>
+</ol>
+<h2 id="Html设计的原则和最佳实践"><a href="#Html设计的原则和最佳实践" class="headerlink" title="Html设计的原则和最佳实践"></a>Html设计的原则和最佳实践</h2><p>内容比较高深，需要持续实践中领悟。</p>
+<p><a href="https://courses.edx.org/courses/course-v1:W3Cx+CSS.0x+3T2018/courseware/bb30325abfbf47b583784acd793db6dc/9dee69c0a62b4adea75199d9f4cef463/?child=first" target="_blank" rel="noopener">html最佳实践</a><br><a href="https://validator.w3.org/" target="_blank" rel="noopener">实践建议—Html验证器</a></p>
+<h2 id="CSS设计的原则和最佳实践"><a href="#CSS设计的原则和最佳实践" class="headerlink" title="CSS设计的原则和最佳实践"></a>CSS设计的原则和最佳实践</h2><p>内容比较高深，需要持续进行深入研究感悟。<br><a href="https://courses.edx.org/courses/course-v1:W3Cx+CSS.0x+3T2018/courseware/b8efea36f1874c2a8a0fc6843d20b063/7831c13150a1448e89fa66891665f6b3/?child=first" target="_blank" rel="noopener">设计原则 高效设计</a><br><a href="https://www.nngroup.com/articles/effective-use-of-style-sheets/" target="_blank" rel="noopener">CSS高效设计</a></p>
+<p>最佳实践：</p>
+<h2 id="CSS全球伙伴实践地"><a href="#CSS全球伙伴实践地" class="headerlink" title="CSS全球伙伴实践地"></a>CSS全球伙伴实践地</h2><p><a href="https://www.nngroup.com/articles/effective-use-of-style-sheets/" target="_blank" rel="noopener">CSSZenGarden</a></p>
+<h2 id="CSS规则"><a href="#CSS规则" class="headerlink" title="CSS规则"></a>CSS规则</h2><ol>
+<li>A CSS rule is broken into two parts: the selector and the property。</li>
+</ol>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*p选择器 + 属性，属性由属性名+value组成*/</span></span><br><span class="line"><span class="selector-tag">p</span>,<span class="selector-tag">ul</span> &#123;</span><br><span class="line"> <span class="attribute">color</span>: blue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>选择CSS选择器时，需要考虑：</li>
+</ol>
+<ul>
+<li>How many of these HTML elements are on my page? Do I want this style to apply to every one of these elements?</li>
+<li>What are this HTML element’s children, and do I want this style to apply to them as well?</li>
+<li>Is this element a block element or an inline element, and does this style make sense in that context?</li>
+</ul>
+<ol start="3">
+<li>书写CSS代码时，注意属性是否继承，同时建议先熟悉Html文档的结构，然后再决定CSS的顺序：<br>Not every property is inherited, but many are. The CSS specification tell you, for each property, whether it is inheritable. It’s a good idea to keep in mind the structure of your HTML document when choosing your selectors so you can use inheritance to your advantage by applying styles to the top most element and save yourself extra CSS code.</li>
+</ol>
+<p>“background-color” is not inherited<br>Effective titles and buttons 注意。</p>
+<h2 id="CSS-常用属性"><a href="#CSS-常用属性" class="headerlink" title="CSS 常用属性"></a>CSS 常用属性</h2><h3 id="1-CSS所有属性表"><a href="#1-CSS所有属性表" class="headerlink" title="1. CSS所有属性表"></a>1. CSS所有属性表</h3><p>There is a huge array of different aspects you can style.<br><a href="https://www.w3.org/Style/CSS/all-properties#list" target="_blank" rel="noopener">W3C_CSS属性表</a></p>
+<h3 id="2-常用属性"><a href="#2-常用属性" class="headerlink" title="2.常用属性"></a>2.常用属性</h3><p>2.0 CSS表示长度的单位<br><a href="https://www.w3.org/Style/Examples/007/units.en.html" target="_blank" rel="noopener">CSS长度单位</a><br><code>H1 {font-size: 2.5em}</code> to make the H1 2½ times as big as the normal, body font.<br>|Type | Rec­om­mended | Oc­ca­sional use | Not rec­om­mended |<br>| — | — | — |—-|<br>| Screen | em, px, % | ex | pt, cm, mm, in, pc |<br>| Print | em, cm, mm, in, pt, pc, % | px, ex ||<br>2.1 Color</p>
+<p><a href="https://www.w3.org/wiki/Colour_theory" target="_blank" rel="noopener">Web 颜色配置理论</a><br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">## <span class="selector-tag">background-color</span></span><br></pre></td></tr></table></figure></p>
+<p>2.2 Font<br><a href="https://www.w3.org/Style/Examples/007/fonts" target="_blank" rel="noopener">字体样式表</a></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">font-family</span>: "<span class="selector-tag">Times</span> <span class="selector-tag">New</span> <span class="selector-tag">Roman</span>", "<span class="selector-tag">New</span> <span class="selector-tag">Century</span> <span class="selector-tag">Schoolbook</span>", <span class="selector-tag">serif</span>;</span><br><span class="line"><span class="selector-tag">font-size</span>: 2<span class="selector-class">.5em</span>;</span><br><span class="line"><span class="selector-tag">font-weight</span>: <span class="selector-tag">bold</span>;</span><br><span class="line"><span class="selector-tag">font-style</span>: <span class="selector-tag">italic</span>;</span><br><span class="line"><span class="selector-tag">text-decoration</span>: <span class="selector-tag">underline</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="CSS选择器"><a href="#CSS选择器" class="headerlink" title="CSS选择器"></a>CSS选择器</h3><p>合理使用使用CSS选择器，可以使我们HTML的代码更清洁，减少一些不必要的Clss和id的使用。<a href="https://www.456bereastreet.com/archive/200509/css_21_selectors_part_1/" target="_blank" rel="noopener">456Berea—更充分使用选择器</a></p>
+<p>参考<a href="http://www.ruanyifeng.com/blog/2009/03/css_selectors.html" target="_blank" rel="noopener">阮一峰博客</a></p>
+<ol>
+<li><strong>基本选择器</strong></li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>选择器</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.</td>
+<td>*</td>
+<td>通用元素选择器，匹配任何元素</td>
+</tr>
+<tr>
+<td>2.</td>
+<td><strong>E</strong></td>
+<td>标签选择器，匹配所有使用E标签的元素</td>
+</tr>
+<tr>
+<td>3.</td>
+<td><strong>.info</strong></td>
+<td>class选择器，匹配所有class属性中包含info的元素</td>
+</tr>
+<tr>
+<td>4.</td>
+<td><strong>#footer</strong></td>
+<td>id选择器，匹配所有id属性等于footer的元素</td>
+</tr>
+</tbody>
+</table>
+<ol start="2">
+<li><strong>多元素的组合选择器</strong></li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>选择器</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5.</td>
+<td>E,F</td>
+<td>多元素选择器，同时匹配所有E元素或F元素，E和F之间用逗号分隔</td>
+</tr>
+<tr>
+<td>6.</td>
+<td>E F</td>
+<td>后代元素选择器，匹配所有属于E元素后代的F元素，E和F之间用空格分隔</td>
+</tr>
+<tr>
+<td>7.</td>
+<td>E &gt; F</td>
+<td>子元素选择器，匹配所有E元素的子元素F</td>
+</tr>
+<tr>
+<td>8.</td>
+<td>E + F</td>
+<td>毗邻元素选择器，匹配所有紧随E元素之后的同级元素F</td>
+</tr>
+</tbody>
+</table>
+<ol start="3">
+<li><strong>CSS 2.1 属性选择器</strong></li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>选择器</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>9.</td>
+<td>E[att]</td>
+<td>匹配所有具有att属性的E元素，不考虑它的值。（注意：E在此处可以省略，比如”[cheacked]”。以下同。）</td>
+</tr>
+<tr>
+<td>10.</td>
+<td>E[att=val]</td>
+<td>匹配所有att属性等于”val”的E元素</td>
+</tr>
+<tr>
+<td>11.</td>
+<td>E[att~=val]</td>
+<td>匹配所有att属性具有多个空格分隔的值、其中一个值等于”val”的E元素</td>
+</tr>
+<tr>
+<td>12.</td>
+<td>E[att\</td>
+<td>=val]</td>
+<td>匹配所有att属性具有多个连字号分隔（hyphen-separated）的值、其中一个值以”val”开头的E元素，主要用于lang属性，比如”en”、”en-us”、”en-gb”等等</td>
+</tr>
+</tbody>
+</table>
+<ol start="4">
+<li><strong>CSS 2.1中的伪元素</strong></li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>选择器</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>20.</td>
+<td>E:first-line</td>
+<td>匹配E元素的第一行</td>
+</tr>
+<tr>
+<td>21.</td>
+<td>E:first-letter</td>
+<td>匹配E元素的第一个字母</td>
+</tr>
+<tr>
+<td>22.</td>
+<td>E:before</td>
+<td>在E元素之前插入生成的内容</td>
+</tr>
+<tr>
+<td>23.</td>
+<td>E:after</td>
+<td>在E元素之后插入生成的内容</td>
+</tr>
+</tbody>
+</table>
+<h3 id="附录-一些居中的方法"><a href="#附录-一些居中的方法" class="headerlink" title="附录 一些居中的方法"></a>附录 一些居中的方法</h3><p><a href="https://www.w3.org/Style/Examples/007/center.en.html" target="_blank" rel="noopener">https://www.w3.org/Style/Examples/007/center.en.html</a></p>
+<h3 id="错题"><a href="#错题" class="headerlink" title="错题"></a>错题</h3><h3 id="8-Input-box-—-focus-active"><a href="#8-Input-box-—-focus-active" class="headerlink" title="8 Input box — focus / active"></a>8 Input box — focus / active</h3><p>Which pseudo-class would you use when you want to change the color of an input box while a user clicks into it?</p>
+<p>focus 不正确</p>
+<p>active 正确</p>
+<p>visited</p>
+<p>hover</p>
+<ul>
+<li>The right answer is: active.</li>
+</ul>
+<p>Clicking has the effect of setting the focus on an element, but the question is about setting the color “while” the user clicks.</p>
+<p>‘Focus’ is not the right answer, because the input element continues to have the focus after the click (until the focus is moved elswehere by another click or some other action).<em>**</em></p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechat.png" alt="Dave Sun 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="Dave Sun 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/21/网页编程实践/" rel="next" title="网页编程实践">
+                <i class="fa fa-chevron-left"></i> 网页编程实践
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/30/python练习/" rel="prev" title="python练习">
+                python练习 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+	  <div>    
+	 
+	 
+	<ul class="post-copyright">
+	  <li class="post-copyright-author">
+		  <strong>本文作者：</strong>Dave Sun
+	  </li>
+	  <li class="post-copyright-link">
+		<strong>本文链接：</strong>
+		<a href="/2018/12/16/前端实践/" title="前端实践">2018/12/16/前端实践/</a>
+	  </li>
+	  <li class="post-copyright-license">
+		<strong>版权： </strong>
+		本站文章均采用 <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0 CN</a> 许可协议，请勿用于商业，转载注明出处！
+	  </li>
+	</ul>
+	
+	</div>
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/hero.png"
+                alt="Dave Sun" />
+            
+              <p class="site-author-name" itemprop="name">Dave Sun</p>
+              <p class="site-description motion-element" itemprop="description">Dave的个人成长的博客</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">16</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/sunrong1990" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:sunrong1990@126.com" target="_blank" title="E-Mail"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                External Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://leetcode-cn.com/problemset/all/" title="leetcode练习" target="_blank">leetcode练习</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.hackerrank.com/dashboard" title="hackerrank练习" target="_blank">hackerrank练习</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.geeksforgeeks.org/" title="geeksforgeeks知识点" target="_blank">geeksforgeeks知识点</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.codecademy.com/catalog/subject/all" title="codecademy学习和练习" target="_blank">codecademy学习和练习</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://ken.io/" title="Ken的博客.net/java" target="_blank">Ken的博客.net/java</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dreamerwinston.github.io/blog/" title="全栈winston" target="_blank">全栈winston</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://me.csdn.net/alitech2017" title="阿里CSDN" target="_blank">阿里CSDN</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料-工具"><span class="nav-number">1.</span> <span class="nav-text">参考资料/工具</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS书籍资料"><span class="nav-number">1.1.</span> <span class="nav-text">CSS书籍资料</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML-工具、软件"><span class="nav-number">1.2.</span> <span class="nav-text">HTML 工具、软件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#学习进展"><span class="nav-number">2.</span> <span class="nav-text">学习进展</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一-CSS盒模型"><span class="nav-number">3.</span> <span class="nav-text">一. CSS盒模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-官方解释"><span class="nav-number">3.1.</span> <span class="nav-text">1. 官方解释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-其他解释"><span class="nav-number">3.2.</span> <span class="nav-text">2.其他解释</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、定位CSS元素"><span class="nav-number">4.</span> <span class="nav-text">二、定位CSS元素</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Pseudo-classes-伪类-Pseudo-elements"><span class="nav-number">4.1.</span> <span class="nav-text">1. Pseudo-classes 伪类 Pseudo-elements</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Contextual-selectors-上下文选择器-派生选择器"><span class="nav-number">4.2.</span> <span class="nav-text">2. Contextual selectors 上下文选择器 派生选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#选择器顺序-–cascading"><span class="nav-number">4.3.</span> <span class="nav-text">选择器顺序 –cascading</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、Layout-and-Position"><span class="nav-number">5.</span> <span class="nav-text">三、Layout and Position</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-alignment-property"><span class="nav-number">5.1.</span> <span class="nav-text">1. alignment property</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-“float“-property-—-very-useful"><span class="nav-number">5.2.</span> <span class="nav-text">2. “float“ property —- very useful</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-”position“-property"><span class="nav-number">5.3.</span> <span class="nav-text">3. ”position“ property</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-The-layout-Advice-—-When-to-use-what"><span class="nav-number">5.4.</span> <span class="nav-text">4. The layout Advice —  When to use what?</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结感谢"><span class="nav-number">6.</span> <span class="nav-text">总结感谢</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#W3C组织"><span class="nav-number">7.</span> <span class="nav-text">W3C组织</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Html-CSS的关系"><span class="nav-number">8.</span> <span class="nav-text">Html CSS的关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Html设计的原则和最佳实践"><span class="nav-number">9.</span> <span class="nav-text">Html设计的原则和最佳实践</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS设计的原则和最佳实践"><span class="nav-number">10.</span> <span class="nav-text">CSS设计的原则和最佳实践</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS全球伙伴实践地"><span class="nav-number">11.</span> <span class="nav-text">CSS全球伙伴实践地</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS规则"><span class="nav-number">12.</span> <span class="nav-text">CSS规则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS-常用属性"><span class="nav-number">13.</span> <span class="nav-text">CSS 常用属性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-CSS所有属性表"><span class="nav-number">13.1.</span> <span class="nav-text">1. CSS所有属性表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-常用属性"><span class="nav-number">13.2.</span> <span class="nav-text">2.常用属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS选择器"><span class="nav-number">13.3.</span> <span class="nav-text">CSS选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#附录-一些居中的方法"><span class="nav-number">13.4.</span> <span class="nav-text">附录 一些居中的方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#错题"><span class="nav-number">13.5.</span> <span class="nav-text">错题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-Input-box-—-focus-active"><span class="nav-number">13.6.</span> <span class="nav-text">8 Input box — focus / active</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 – <span itemprop="copyrightYear">2021</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Dave Sun</span>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv" title="总访客量">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="site-pv" title="总访问量">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/gh/theme-next/theme-next-three@1.0.0/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/gh/theme-next/theme-next-three@1.0.0/canvas_sphere.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.4.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.4.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+  
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(function (item) {
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'vnvFXTzE5r9yCu8YMQyXU2EI-gzGzoHsz',
+        appKey: 'ehVhIbh5GP7jtyfP7eO7zmHo',
+        placeholder: 'I like your idea',
+        avatar:'mm',
+        meta:guest,
+        pageSize:'10' || 10,
+        visitor: true
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

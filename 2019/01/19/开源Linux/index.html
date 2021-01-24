@@ -115,7 +115,7 @@
 <meta property="og:description" content="参考书籍资料 廖雪峰 # 如何选择开源许可证 选择开源许可 开源许可比较 开源许可证都有什么区别  扩展  Opensource开源网站 Linux开源中国网 UNIX传奇">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://www.sunrong.site/2019/01/19/开源Linux/freedomSoft.png">
-<meta property="og:updated_time" content="2021-01-12T14:50:55.032Z">
+<meta property="og:updated_time" content="2021-01-22T13:39:39.909Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="开源Linux">
 <meta name="twitter:description" content="参考书籍资料 廖雪峰 # 如何选择开源许可证 选择开源许可 开源许可比较 开源许可证都有什么区别  扩展  Opensource开源网站 Linux开源中国网 UNIX传奇">
@@ -368,7 +368,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2021-01-12 22:50:55" itemprop="dateModified" datetime="2021-01-12T22:50:55+08:00">2021-01-12</time>
+                <time title="修改时间：2021-01-22 21:39:39" itemprop="dateModified" datetime="2021-01-22T21:39:39+08:00">2021-01-22</time>
               
             
           </span>
@@ -510,7 +510,7 @@
 <ul>
 <li><p>移动命令<br>快速移动命令：jkhl<br>整个文档的：gg G<br>整行的：0 $<br>单词的(可以加移动量)：w e 2w 2e<br>历史位置的前进和后退：ctrl+o ctrl+i<br>显示当前位置信息：ctrl+g<br>匹配移动：%</p>
 </li>
-<li><p>复制<br>选择任意复制：v+motion</p>
+<li><p>复制<br>复制单词：yw<br>复制一行：yy<br>选择任意复制：v+motion</p>
 </li>
 </ul>
 <ul>
@@ -518,9 +518,13 @@
 </li>
 <li><p>插入<br>删除单词后插入：c2w c$<br>插入到行尾：A<br>插入一个空行：o O<br>插入文件内容: <code>:r filename</code></p>
 </li>
-<li><p>替换<br>替换字母：rx<br>替换一行： <code>:s/old/new/g</code><br>替换整个文档： <code>%s/old/new/gc</code></p>
+<li><p>查找<br>/ignore\c :忽略大小写查找，也可以进行全局设置，set ic</p>
+</li>
+<li><p>替换<br>替换单个字母：rx<br>替换多个字母：R + xxxx<br>替换一行内： <code>:s/old/new/g</code><br>替换整个文档： <code>%s/old/new/gc</code></p>
 </li>
 <li><p>对操作的处理<br>撤销上一步操作：u U(整行)<br>还原撤销的操作：ctrl+r</p>
+</li>
+<li><p>帮助和配置<br>:help w<br>:help q</p>
 </li>
 </ul>
 
@@ -686,7 +690,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">15</span>
+                    <span class="site-state-item-count">16</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
