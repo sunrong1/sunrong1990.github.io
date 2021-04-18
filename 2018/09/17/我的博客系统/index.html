@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.4.1" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/hero-32x32-next.jpg?v=6.4.1">
+
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.4.1" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.4.1',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="1. hexo博客建立，涉及工具基础 2. 实践过程知识点 2.1. 博客类产品的设计   3. 安装过程总结 4. hexo博客基础，基本操作命令，基本配置 4.1. hexo基本介绍 4.2. Hexo博客基本结构 4.3. 常用Hexo操作   5. 相关知识点 5.1. yaml文件结构和配置 5.2. ssh通信基础 (git免密上传） 5.3. 域名重定向原理 5.4. maked">
+<meta name="keywords" content="个人成长 程序员 产品经理">
+<meta property="og:type" content="article">
+<meta property="og:title" content="我的博客系统">
+<meta property="og:url" content="https://www.sunrong.site/2018/09/17/我的博客系统/index.html">
+<meta property="og:site_name" content="The Path of Dave">
+<meta property="og:description" content="1. hexo博客建立，涉及工具基础 2. 实践过程知识点 2.1. 博客类产品的设计   3. 安装过程总结 4. hexo博客基础，基本操作命令，基本配置 4.1. hexo基本介绍 4.2. Hexo博客基本结构 4.3. 常用Hexo操作   5. 相关知识点 5.1. yaml文件结构和配置 5.2. ssh通信基础 (git免密上传） 5.3. 域名重定向原理 5.4. maked">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://s1.51cto.com/images/20180131/1517395436837583.png?x-oss-process=image/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_100,g_se,x_10,y_10,shadow_90,type_ZmFuZ3poZW5naGVpdGk=">
+<meta property="og:updated_time" content="2021-04-18T14:25:56.914Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="我的博客系统">
+<meta name="twitter:description" content="1. hexo博客建立，涉及工具基础 2. 实践过程知识点 2.1. 博客类产品的设计   3. 安装过程总结 4. hexo博客基础，基本操作命令，基本配置 4.1. hexo基本介绍 4.2. Hexo博客基本结构 4.3. 常用Hexo操作   5. 相关知识点 5.1. yaml文件结构和配置 5.2. ssh通信基础 (git免密上传） 5.3. 域名重定向原理 5.4. maked">
+<meta name="twitter:image" content="http://s1.51cto.com/images/20180131/1517395436837583.png?x-oss-process=image/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_100,g_se,x_10,y_10,shadow_90,type_ZmFuZ3poZW5naGVpdGk=">
+
+
+
+
+
+
+  <link rel="canonical" href="https://www.sunrong.site/2018/09/17/我的博客系统/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>我的博客系统 | The Path of Dave</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+	<a href="https://github.com/sunrong1990" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#70B7FD; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">The Path of Dave</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">分享我的知识和实践</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-schedule">
+    <a href="/schedule/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />日程表</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://www.sunrong.site/2018/09/17/我的博客系统/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dave Sun">
+      <meta itemprop="description" content="Dave的个人成长的博客">
+      <meta itemprop="image" content="/images/hero.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="The Path of Dave">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">我的博客系统
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-09-17 22:41:20" itemprop="dateCreated datePublished" datetime="2018-09-17T22:41:20+08:00">2018-09-17</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2021-04-18 22:25:56" itemprop="dateModified" datetime="2021-04-18T22:25:56+08:00">2021-04-18</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Interesting-Using/" itemprop="url" rel="index"><span itemprop="name">Interesting Using</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/09/17/我的博客系统/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/09/17/我的博客系统/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/09/17/我的博客系统/" class="leancloud_visitors" data-flag-title="我的博客系统">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <!-- TOC -->
+<ul>
+<li><a href="#01-hexo博客建立涉及工具基础">1. hexo博客建立，涉及工具基础</a></li>
+<li><a href="#02-实践过程知识点">2. 实践过程知识点</a><ul>
+<li><a href="#021-博客类产品的设计">2.1. 博客类产品的设计</a></li>
+</ul>
+</li>
+<li><a href="#03-安装过程总结">3. 安装过程总结</a></li>
+<li><a href="#04-hexo博客基础基本操作命令基本配置">4. hexo博客基础，基本操作命令，基本配置</a><ul>
+<li><a href="#041-hexo基本介绍">4.1. hexo基本介绍</a></li>
+<li><a href="#042-hexo博客基本结构">4.2. Hexo博客基本结构</a></li>
+<li><a href="#043-常用hexo操作">4.3. 常用Hexo操作</a></li>
+</ul>
+</li>
+<li><a href="#05-相关知识点">5. 相关知识点</a><ul>
+<li><a href="#051-yaml文件结构和配置">5.1. yaml文件结构和配置</a></li>
+<li><a href="#052-ssh通信基础-git免密上传">5.2. ssh通信基础 (git免密上传）</a></li>
+<li><a href="#053-域名重定向原理">5.3. 域名重定向原理</a></li>
+<li><a href="#054-makedown文件的基础语法-yu-write基本使用">5.4. makedown文件的基础语法 yu write基本使用</a></li>
+<li><a href="#055-git的基本命令">5.5. git的基本命令</a></li>
+<li><a href="#056-网站运营辅助工具">5.6. 网站运营辅助工具</a></li>
+<li><a href="#057-文章添加版权信息">5.7. 文章添加版权信息</a></li>
+<li><a href="#058-文章添加打赏功能"> 5.8 文章添加打赏功能</a></li>
+<li><a href="#059-添加站点地图-sitemap"> 5.9 添加站点地图 sitemap</a></li>
+<li><a href="#0510-hexo文章加密">5.10 HEXO文章加密</a></li>
+</ul>
+</li>
+</ul>
+<a id="more"></a>
+<h2 id="我的博客组织和构建思路"><a href="#我的博客组织和构建思路" class="headerlink" title="我的博客组织和构建思路"></a>我的博客组织和构建思路</h2><h3 id="博客目的"><a href="#博客目的" class="headerlink" title="博客目的"></a>博客目的</h3><p>自我审视我的学习、成长和工作状态，构建和完善我的知识体系，同时展示我最新的思想状态。</p>
+<h3 id="博客的内容分布思路-需要不断更新"><a href="#博客的内容分布思路-需要不断更新" class="headerlink" title="博客的内容分布思路(需要不断更新)"></a>博客的内容分布思路(需要不断更新)</h3><p>工作上：从大的分类逐渐细化，比如，从AI智能，到图像处理，到智能车，领域逐渐缩小，细化；<br>思想上：从实际维度，看思想成长过程；<br>学习上：不断更新修改自己的学习方法，朝着最优方式前进；</p>
+<h2 id="1-2018年hexo博客建立，涉及工具基础"><a href="#1-2018年hexo博客建立，涉及工具基础" class="headerlink" title="1. 2018年hexo博客建立，涉及工具基础"></a>1. 2018年hexo博客建立，涉及工具基础</h2><ul>
+<li>git <em>版本管理</em></li>
+<li>github page <em>网站发布仓库</em></li>
+<li>node.js 包（附带NPM包管理） <em>HEXO底层驱动</em></li>
+<li>hexo博客框架包 </li>
+<li>next主题 <em>网站美化辅助</em></li>
+<li>VScode编辑器 <em>makedown文件编辑辅助</em></li>
+</ul>
+<h3 id="2-实践过程知识点"><a href="#2-实践过程知识点" class="headerlink" title="2. 实践过程知识点"></a>2. 实践过程知识点</h3><h4 id="2-1-博客类产品的设计"><a href="#2-1-博客类产品的设计" class="headerlink" title="2.1. 博客类产品的设计"></a>2.1. 博客类产品的设计</h4><p>HEXO是属于开源博客类的产品。他的设计成功之处有：</p>
+<ol>
+<li>代码开源<br>GITHUB上开发，吸引众多伙伴参与建设；</li>
+<li>网站主题很多<br>主题多，可以定制各种漂亮的BLOG。</li>
+<li>安装更新方便<br>和GIT结合使用，nodejs的成熟的npm软件包管理，可以非常方便的安装和更新</li>
+<li>使用简便<br>安装后，BLOG使用流行的MarkDown语言编写，写起来比较惬意。</li>
+</ol>
+<h3 id="3-安装和部署过程"><a href="#3-安装和部署过程" class="headerlink" title="3. 安装和部署过程"></a>3. 安装和部署过程</h3><p>总体安装过程比较简单，部署也比较容易：</p>
+<ol>
+<li>安装包：node.js 、git<br>安装node.js过程中，自动安装npm，同时也可以自动安装编译nodejs 所需要的python VS2017工具等；</li>
+<li>编辑器：VSCODE<br>用作makerdown的编辑器</li>
+<li>HEXO静态博客框架安装和初始化<br>在git bash 中，使用<code>$npm install -g hexo-cli</code> 命令安装hexo框架。空白博客，使用<code>hexo init</code>初始化，过程比较慢，需要下载依赖，可能要多试几次。</li>
+<li>hexo的next主题安装<br>安装next主题库<code>git clone git@github.com:theme-next/hexo-theme-next.git next</code>。</li>
+<li>github page网站仓库建立<br>博客写好后，可以直接上传到github page上。我的<a href="https://github.com/sunrong1990/sunrong1990.github.io" target="_blank" rel="noopener">github page</a></li>
+<li>使用git bash编译和部署博客<br>初始化Github page，然后使用SSH生成本地公钥和私钥，同步到github 上，就可以自由的更新博客了，具体命令见4.3节 hexo常用命令。</li>
+</ol>
+<h3 id="4-hexo博客基础，基本操作命令，基本配置"><a href="#4-hexo博客基础，基本操作命令，基本配置" class="headerlink" title="4. hexo博客基础，基本操作命令，基本配置"></a>4. hexo博客基础，基本操作命令，基本配置</h3><h4 id="4-1-hexo基本介绍"><a href="#4-1-hexo基本介绍" class="headerlink" title="4.1 hexo基本介绍"></a>4.1 hexo基本介绍</h4><p>Hexo是一款基于Node.js的静态博客框架，依赖少易于安装使用，可以方便的生成静态网页托管在GitHub和Heroku上，是搭建博客的首选框架。</p>
+<p>hexo源码同步在 <a href="https://github.com/hexojs/hexo" target="_blank" rel="noopener">Hexo_github</a>上。<br>操作命令非常简单，官方<a href="https://hexo.io/docs/" target="_blank" rel="noopener">hexo DOC文档</a>，介绍的非常详细。</p>
+<blockquote>
+<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+</blockquote>
+<h4 id="4-2-Hexo博客基本结构"><a href="#4-2-Hexo博客基本结构" class="headerlink" title="4.2 Hexo博客基本结构"></a>4.2 Hexo博客基本结构</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── .deploy</span><br><span class="line">├── public</span><br><span class="line">├── scaffolds</span><br><span class="line">├── scripts</span><br><span class="line">├── source</span><br><span class="line">| ├── _drafts</span><br><span class="line">| └── _posts</span><br><span class="line">├── themes</span><br><span class="line">├── _config.yml</span><br><span class="line">└── package.json</span><br></pre></td></tr></table></figure>
+<p>注意配置文件：_config.yml，根目录下和主题配置文件下都存在。</p>
+<p>More info: <a href="https://hexo.io/docs/" target="_blank" rel="noopener">Docment</a></p>
+<h4 id="4-3-常用Hexo操作"><a href="#4-3-常用Hexo操作" class="headerlink" title="4.3. 常用Hexo操作"></a>4.3. 常用Hexo操作</h4><p>git bash mysite</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> hexo clean //清理历史</span><br><span class="line"><span class="meta">$</span> hexo new [layout] &lt;title&gt; #创建新文章</span><br><span class="line"><span class="meta">$</span> hexo s  =&gt; hexo server  #启动服务预览(本地模式)</span><br><span class="line"><span class="meta">$</span> hexo g //生成</span><br><span class="line"><span class="meta">$</span> hexo d //网络发布</span><br><span class="line"><span class="meta">$</span> hexo new page categories //新建分配页面，主题将自动为这个页面显示所有分类</span><br></pre></td></tr></table></figure>
+<p>这个标签对网页进行分页\&lt; !–more–><br>语言设置 ：zh-CN<br>其他内容 这篇博客介绍的比较详细：<a href="https://cherryblog.site/Hexo-high-level-tutorialcloudmusic,bg-customthemes-statistical.html" target="_blank" rel="noopener">cherryblog</a></p>
+<p><a href="https://www.xiaocoder.com/2018/07/15/hexo-blog-optimizing-guide/" target="_blank" rel="noopener">UFO写的</a></p>
+<h3 id="5-其他HEXO配置"><a href="#5-其他HEXO配置" class="headerlink" title="5. 其他HEXO配置"></a>5. 其他HEXO配置</h3><h4 id="5-3-域名重定向"><a href="#5-3-域名重定向" class="headerlink" title="5.3. 域名重定向"></a>5.3. 域名重定向</h4><p>Github Page下面添加CNAME文件，个人主页的域名就会重定向到CNAME内容的网站，比如从surong1990.github.io —-&gt;<a href="http://www.sunrong.site">www.sunrong.site</a></p>
+<p>腾讯云域名，添加两个记录，分别为www,和@ 记录。</p>
+<blockquote>
+<p>引申知识点：<a href="http://www.cnblogs.com/fangzuchang/p/6702023.html" target="_blank" rel="noopener">URL、域名、DNS解析理解</a></p>
+</blockquote>
+<h3 id="5-6-网站运营辅助工具"><a href="#5-6-网站运营辅助工具" class="headerlink" title="5.6 网站运营辅助工具"></a>5.6 网站运营辅助工具</h3><p>leancloud提供数据存储、文件存储、云引擎、容器、即时通讯、消息推送、短信、游戏云等多项服务,为移动开发提供强有力的后端支持。</p>
+<ul>
+<li>查询次数统计，使用的是<a href="https://leancloud.cn/" target="_blank" rel="noopener">leancloud阅读次数统计</a></li>
+<li>字数统计，阅读时长等统计，新版本Next 6.0使用的是 hexo-symbols-count-time，需要npm安装插件</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-symbols-count-time --save</span><br></pre></td></tr></table></figure>
+<h4 id="5-7-文章添加版权信息"><a href="#5-7-文章添加版权信息" class="headerlink" title="5.7 文章添加版权信息"></a>5.7 文章添加版权信息</h4><p>参考<a href="http://stevenshi.me/2017/05/26/hexo-add-copyright/" target="_blank" rel="noopener">Steven’s space</a></p>
+<h4 id="5-8-文章添加打赏功能"><a href="#5-8-文章添加打赏功能" class="headerlink" title="5.8 文章添加打赏功能"></a>5.8 文章添加打赏功能</h4><p>参考：<a href="https://blog.csdn.net/lcyaiym/article/details/76796545" target="_blank" rel="noopener">https://blog.csdn.net/lcyaiym/article/details/76796545</a></p>
+<h4 id="5-9-添加站点地图-sitemap"><a href="#5-9-添加站点地图-sitemap" class="headerlink" title="5.9 添加站点地图 sitemap"></a>5.9 添加站点地图 sitemap</h4><p>可以不用添加，提交的时候自动生成上传</p>
+<p><a href="https://cnneillee.github.io/2017/05/10/hexo/Hexo%E8%BF%9B%E9%98%B6%E2%80%94%E2%80%94%E6%B7%BB%E5%8A%A0%E7%AB%99%E7%82%B9%E5%9C%B0%E5%9B%BE/" target="_blank" rel="noopener">https://cnneillee.github.io/2017/05/10/hexo/Hexo%E8%BF%9B%E9%98%B6%E2%80%94%E2%80%94%E6%B7%BB%E5%8A%A0%E7%AB%99%E7%82%B9%E5%9C%B0%E5%9B%BE/</a></p>
+<h4 id="5-10-HEXO文章加密"><a href="#5-10-HEXO文章加密" class="headerlink" title="5.10 HEXO文章加密"></a>5.10 HEXO文章加密</h4><p><a href="https://www.jianshu.com/p/44e211829447" target="_blank" rel="noopener">https://www.jianshu.com/p/44e211829447</a> </p>
+<h3 id="延申知识"><a href="#延申知识" class="headerlink" title="延申知识"></a>延申知识</h3><h4 id="yaml文件结构和配置"><a href="#yaml文件结构和配置" class="headerlink" title="yaml文件结构和配置"></a>yaml文件结构和配置</h4><p> YAML（Yet Another Markup Language）（发音 /ˈjæməl/ ）一种基于Unicode容易阅读，容易和脚本语言交互的，用来表达资料序列的编程语言。<a href="https://blog.csdn.net/beginya/article/details/76768968" target="_blank" rel="noopener">YAML文件简介</a> 这个文件基本介绍的比较详细。<br><strong>语法：</strong></p>
+<ul>
+<li>使用空格 Space 缩进表示分层，不同层次之间的缩进可以使用不同的空格数目，但是同层元素一定左对齐，即前面空格数目相同（不能使用 Tab，各个系统 Tab对应的 Space 数目可能不同，导致层次混乱）;</li>
+<li>‘#’表示注释，只能单行注释，从#开始处到行尾;</li>
+<li>破折号后面跟一个空格（a dash and space）表示列表;</li>
+<li>用冒号和空格表示键值对 key: value；</li>
+<li>简单数据（scalars，标量数据）可以不使用引号括起来，包括字符串数据。用单引号或者双引号括起来的被当作字符串数据，在单引号或双引号中使用C风格的转义字符；</li>
+</ul>
+<p><strong>简单说</strong>：就是一种相对简单的标记语言，使用空格和缩进表示分层，同一元素一定左对齐。</p>
+<h4 id="ssh通信基础-git免密上传）"><a href="#ssh通信基础-git免密上传）" class="headerlink" title="ssh通信基础 (git免密上传）"></a>ssh通信基础 (git免密上传）</h4><p><strong>SSH</strong>为Secure Shell的缩写，由<a href="https://baike.baidu.com/item/IETF" target="_blank" rel="noopener">IETF</a>的网络工作小组（Network Working Group）所制定；SSH为创建在<a href="https://baike.baidu.com/item/%E5%BA%94%E7%94%A8%E5%B1%82" target="_blank" rel="noopener">应用层</a>和<a href="https://baike.baidu.com/item/%E4%BC%A0%E8%BE%93%E5%B1%82" target="_blank" rel="noopener">传输层</a>基础上的安全协议。基本原理概念介绍，这篇文章写的非常好： <a href="https://www.cnblogs.com/yyds/p/6992125.html" target="_blank" rel="noopener">网络数据传输安全及SSH与HTTPS工作原理</a></p>
+<p>先看这篇的总结也不错：<a href="https://www.cnblogs.com/tianlai/p/3817956.html" target="_blank" rel="noopener">SSH原理和使用</a><br><strong>需要理解的是，</strong> SSH就是一种网络协议，主要用于计算机之间的加密登录与数据传输。SSH是充分利用了公钥加密/非对称机密 、对称加密 和 单向加密来实现数据安全。<br><img src="http://s1.51cto.com/images/20180131/1517395436837583.png?x-oss-process=image/watermark,size_16,text_QDUxQ1RP5Y2a5a6i,color_FFFFFF,t_100,g_se,x_10,y_10,shadow_90,type_ZmFuZ3poZW5naGVpdGk=" alt="SSH RSA加密过程"></p>
+<h4 id="git的基本命令"><a href="#git的基本命令" class="headerlink" title="git的基本命令"></a>git的基本命令</h4>
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechat.png" alt="Dave Sun 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="Dave Sun 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/09/22/编程理论和架构学习/" rel="prev" title="编程理论和架构学习">
+                编程理论和架构学习 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+	  <div>    
+	 
+	 
+	<ul class="post-copyright">
+	  <li class="post-copyright-author">
+		  <strong>本文作者：</strong>Dave Sun
+	  </li>
+	  <li class="post-copyright-link">
+		<strong>本文链接：</strong>
+		<a href="/2018/09/17/我的博客系统/" title="我的博客系统">2018/09/17/我的博客系统/</a>
+	  </li>
+	  <li class="post-copyright-license">
+		<strong>版权： </strong>
+		本站文章均采用 <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0 CN</a> 许可协议，请勿用于商业，转载注明出处！
+	  </li>
+	</ul>
+	
+	</div>
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/hero.png"
+                alt="Dave Sun" />
+            
+              <p class="site-author-name" itemprop="name">Dave Sun</p>
+              <p class="site-description motion-element" itemprop="description">Dave的个人成长的博客</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">15</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/sunrong1990" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:sunrong1990@126.com" target="_blank" title="E-Mail"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                External Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://leetcode-cn.com/problemset/all/" title="leetcode练习" target="_blank">leetcode练习</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.hackerrank.com/dashboard" title="hackerrank练习" target="_blank">hackerrank练习</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.geeksforgeeks.org/" title="geeksforgeeks知识点" target="_blank">geeksforgeeks知识点</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.codecademy.com/catalog/subject/all" title="codecademy学习和练习" target="_blank">codecademy学习和练习</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://ken.io/" title="Ken的博客.net/java" target="_blank">Ken的博客.net/java</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dreamerwinston.github.io/blog/" title="全栈winston" target="_blank">全栈winston</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://me.csdn.net/alitech2017" title="阿里CSDN" target="_blank">阿里CSDN</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#我的博客组织和构建思路"><span class="nav-number">1.</span> <span class="nav-text">我的博客组织和构建思路</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#博客目的"><span class="nav-number">1.1.</span> <span class="nav-text">博客目的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#博客的内容分布思路-需要不断更新"><span class="nav-number">1.2.</span> <span class="nav-text">博客的内容分布思路(需要不断更新)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2018年hexo博客建立，涉及工具基础"><span class="nav-number">2.</span> <span class="nav-text">1. 2018年hexo博客建立，涉及工具基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-实践过程知识点"><span class="nav-number">2.1.</span> <span class="nav-text">2. 实践过程知识点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-博客类产品的设计"><span class="nav-number">2.1.1.</span> <span class="nav-text">2.1. 博客类产品的设计</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-安装和部署过程"><span class="nav-number">2.2.</span> <span class="nav-text">3. 安装和部署过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-hexo博客基础，基本操作命令，基本配置"><span class="nav-number">2.3.</span> <span class="nav-text">4. hexo博客基础，基本操作命令，基本配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-hexo基本介绍"><span class="nav-number">2.3.1.</span> <span class="nav-text">4.1 hexo基本介绍</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-Hexo博客基本结构"><span class="nav-number">2.3.2.</span> <span class="nav-text">4.2 Hexo博客基本结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-3-常用Hexo操作"><span class="nav-number">2.3.3.</span> <span class="nav-text">4.3. 常用Hexo操作</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-其他HEXO配置"><span class="nav-number">2.4.</span> <span class="nav-text">5. 其他HEXO配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#5-3-域名重定向"><span class="nav-number">2.4.1.</span> <span class="nav-text">5.3. 域名重定向</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-6-网站运营辅助工具"><span class="nav-number">2.5.</span> <span class="nav-text">5.6 网站运营辅助工具</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#5-7-文章添加版权信息"><span class="nav-number">2.5.1.</span> <span class="nav-text">5.7 文章添加版权信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-8-文章添加打赏功能"><span class="nav-number">2.5.2.</span> <span class="nav-text">5.8 文章添加打赏功能</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-9-添加站点地图-sitemap"><span class="nav-number">2.5.3.</span> <span class="nav-text">5.9 添加站点地图 sitemap</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-10-HEXO文章加密"><span class="nav-number">2.5.4.</span> <span class="nav-text">5.10 HEXO文章加密</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#延申知识"><span class="nav-number">2.6.</span> <span class="nav-text">延申知识</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#yaml文件结构和配置"><span class="nav-number">2.6.1.</span> <span class="nav-text">yaml文件结构和配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ssh通信基础-git免密上传）"><span class="nav-number">2.6.2.</span> <span class="nav-text">ssh通信基础 (git免密上传）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git的基本命令"><span class="nav-number">2.6.3.</span> <span class="nav-text">git的基本命令</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 – <span itemprop="copyrightYear">2021</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Dave Sun</span>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv" title="总访客量">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="site-pv" title="总访问量">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/gh/theme-next/theme-next-three@1.0.0/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/gh/theme-next/theme-next-three@1.0.0/canvas_sphere.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.4.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.4.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+  
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(function (item) {
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'vnvFXTzE5r9yCu8YMQyXU2EI-gzGzoHsz',
+        appKey: 'ehVhIbh5GP7jtyfP7eO7zmHo',
+        placeholder: 'I like your idea',
+        avatar:'mm',
+        meta:guest,
+        pageSize:'10' || 10,
+        visitor: true
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
