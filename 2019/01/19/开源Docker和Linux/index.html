@@ -115,7 +115,8 @@
 <meta property="og:description" content="参考书籍资料 廖雪峰 # 如何选择开源许可证 开源许可比较 开源许可证都有什么区别 廖雪峰 Docker 入门教程扩展 Opensource开源网站 Linux开源中国网 UNIX传奇">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://www.sunrong.site/2019/01/19/开源Docker和Linux/freedomSoft.png">
-<meta property="og:updated_time" content="2021-05-29T14:57:18.442Z">
+<meta property="og:image" content="https://mrhelloworld.com/resources/articles/docker/7868545-060cc40d94102469.jpg">
+<meta property="og:updated_time" content="2021-06-20T14:32:51.787Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="开开源Docker和Linux">
 <meta name="twitter:description" content="参考书籍资料 廖雪峰 # 如何选择开源许可证 开源许可比较 开源许可证都有什么区别 廖雪峰 Docker 入门教程扩展 Opensource开源网站 Linux开源中国网 UNIX传奇">
@@ -368,7 +369,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2021-05-29 22:57:18" itemprop="dateModified" datetime="2021-05-29T22:57:18+08:00">2021-05-29</time>
+                <time title="修改时间：2021-06-20 22:32:51" itemprop="dateModified" datetime="2021-06-20T22:32:51+08:00">2021-06-20</time>
               
             
           </span>
@@ -451,20 +452,22 @@
 </ul>
 <a id="more"></a>
 <p><img src="/2019/01/19/开源Docker和Linux/freedomSoft.png" alt="自由软件吉祥物"><br>GNU 自由软件吉祥物 -角牛</p>
-<h2 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h2><p>Docker Engine属于 Linux 容器的一种封装，提供简单易用的容器使用接口。<br>Docker 把应用程序及其依赖，打包在 image 文件里面。只有通过这个文件，才能生成 Docker 容器.<br>Docker 是服务器—-客户端架构<br>官方指导：<a href="https://docs.docker.com/engine/install/ubuntu/" target="_blank" rel="noopener">https://docs.docker.com/engine/install/ubuntu/</a><br><a href="https://www.cnblogs.com/mrhelloworld/p/docker2.html" target="_blank" rel="noopener">Docker 架构及工作原理</a></p>
+<h2 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h2><p>Docker Engine属于 Linux 容器的一种封装，提供简单易用的容器使用接口。<br>Docker 把应用程序及其依赖，打包在 image 文件里面。只有通过这个文件，才能生成 Docker 容器.<br>Docker 是服务器—-客户端架构。客户端和服务器端是可以分离的。客户端通过给Docker守护进程Daemon发送消息，完成本机的container的相关操作，包含创建、运行、删除等。</p>
+<p><img src="https://mrhelloworld.com/resources/articles/docker/7868545-060cc40d94102469.jpg" alt="docker架构"></p>
+<p>官方指导：<a href="https://docs.docker.com/engine/install/ubuntu/" target="_blank" rel="noopener">https://docs.docker.com/engine/install/ubuntu/</a><br><a href="https://www.cnblogs.com/mrhelloworld/p/docker2.html" target="_blank" rel="noopener">Docker 架构及工作原理</a></p>
+<p>安装 docker引擎<br><a href="https://docs.docker.com/engine/install/ubuntu/" target="_blank" rel="noopener">https://docs.docker.com/engine/install/ubuntu/</a></p>
+<p><strong>Docker搭建Anaconda环境</strong></p>
+<p><a href="https://zhuanlan.zhihu.com/p/139366067" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/139366067</a></p>
 <ul>
-<li><p>安装 docker引擎<br><a href="https://docs.docker.com/engine/install/ubuntu/" target="_blank" rel="noopener">https://docs.docker.com/engine/install/ubuntu/</a></p>
-</li>
-<li><p>Docker搭建Anaconda环境<br><a href="https://zhuanlan.zhihu.com/p/139366067" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/139366067</a></p>
-</li>
-<li><p>启动管理等<br>第一次启动，会自动创建container<br>docker run -it –name=”anaconda” -p 8888:8888 continuumio/anaconda3 /bin/bash</p>
-</li>
+<li>启动管理等<br>第一次启动，会自动创建container<br>docker run -it –name=”anaconda” -p 8888:8888 -v /home/docker/anaconda:/root continuumio/anaconda3 /bin/bash</li>
 </ul>
-<p>-p参数：容器的 3000 端口映射到本机的 8000 端口。<br>-it参数：容器的 Shell 映射到当前的 Shell，然后你在本机窗口输入的命令，就会传入容器。<br>koa-demo:0.0.1：image 文件的名字（如果有标签，还需要提供标签，默认是 latest 标签）。<br>/bin/bash：容器启动以后，内部第一个执行的命令。这里是启动 Bash，保证用户可以使用 Shell。</p>
-<p>#进入启动的container的bash<br>docker container exec -it [containerID] /bin/bash</p>
-<p>#container中，启动jupyter<br>jupyter notebook –port 8888 –ip 0.0.0.0 –allow-root &amp;</p>
-<p>#重新启动<br>docker start anaconda</p>
-<p>#进入Docker 运行环境<br>docker exec -it anaconda /bin/bash</p>
+<p>-p参数：容器的 3000 端口映射到本机的 8000 端口。<br>-it参数：容器的 Shell 映射到当前的 Shell，然后你在本机窗口输入的命令，就会传入容器。<br>-d参数 或者在run后面加上-d参数,则会创建一个守护式容器在后台运行<br>koa-demo:0.0.1：image 文件的名字（如果有标签，还需要提供标签，默认是 latest 标签）。<br>/bin/bash：容器启动以后，内部第一个执行的命令。这里是启动 Bash，保证用户可以使用 Shell。<br>-v参数：volume卷的操作，将容器的数据卷映射到宿主机上，容器删除的时候，数据依然会保留。</p>
+<p>jupyter notebook –port 8888 –ip 0.0.0.0 –allow-root &amp; #container中，启动jupyter<br>docker exec -it anaconda /bin/bash #进入Docker 运行环境</p>
+<p><strong>其他常用命令</strong></p>
+<p>docker 命令 –help      #帮助文档<br>docker ps = docker container ls #查看正在运行的程序<br>docker container ls –all # 查看所有容器<br>docker exec -it [containerid] /bin/bash #进入容器的运行环境<br>docker start [id] #启动历史容器<br>docker restart [id] # 重启容器<br>docker stop [id]  #停止容器<br>docker images #查看容器<br>docker search [mysql] # 查找镜像<br>docker pull [imageid] # 拉下镜像<br>docker rmi [imageid]  # 删除镜像<br>docker rm [containerID] #删除容器<br>docker exec -it [containerID] /bin/bash #进入启动的container的bash</p>
+<p>docker stats # docker 资源占用<br>docker top [containerid]  #docker 容器内进程的状态<br>docker image prune #删除未使用的镜像<br>docker container prune #删除未使用的容器</p>
+<p><strong>其他实用技巧</strong><br>docker常用命令和其他：<a href="https://www.cnblogs.com/mrhelloworld/p/docker4.html" target="_blank" rel="noopener">https://www.cnblogs.com/mrhelloworld/p/docker4.html</a><br>docker使用技巧：<a href="https://zhuanlan.zhihu.com/p/107093309" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/107093309</a></p>
+<p>docker cp [containerid]:[paht] [targetDir] #容器内数据保存到宿主机<br>docker inspect [containerid] # 查看容器的源信息，mounts 是挂载信息</p>
 <h2 id="开源"><a href="#开源" class="headerlink" title="开源"></a>开源</h2><h3 id="开源含义"><a href="#开源含义" class="headerlink" title="开源含义"></a>开源含义</h3><p><strong>Open-source software</strong> (<strong>OSS</strong>) is a type of <a href="https://en.wikipedia.org/wiki/Computer_software" title="Computer software" target="_blank" rel="noopener">computer software</a> in which <a href="https://en.wikipedia.org/wiki/Source_code" title="Source code" target="_blank" rel="noopener">source code</a> is released under a <a href="https://en.wikipedia.org/wiki/Open-source_license" title="Open-source license" target="_blank" rel="noopener">license</a> in which the <a href="https://en.wikipedia.org/wiki/Copyright" title="Copyright" target="_blank" rel="noopener">copyright</a> holder grants users the rights to study, change, and <a href="https://en.wikipedia.org/wiki/Software_distribution" title="Software distribution" target="_blank" rel="noopener">distribute the software</a> to anyone and for any purpose.</p>
 <h3 id="不同开源协议区分"><a href="#不同开源协议区分" class="headerlink" title="不同开源协议区分"></a>不同开源协议区分</h3><p>1983年春天，Richard Matthew Stallman，这位曾经在 MIT 人工智能实验室工作的程序员，发起了 GNU 项目，旨在开发一个自由的类 UNIX 的操作系统。他为专有软件的增长和随之而来的用户不再能够修改他们电脑上的程序而忧心忡忡。软件开发者被束缚，有悖自由精神的现象随之普遍发生。<strong>GNU 项目的创立，标志了自由软件运动的开始</strong>，随后的 1985年10月，Stallman 又创立了自由软件基金会(Free Software Foundation, FSF)。<br>不同的许可协议的区分，可以从使用权限，使用条件上区分:</p>
 <ul>
@@ -500,13 +503,14 @@
 <p><strong> GPL（ V2或 V3）许可证</strong><br><strong>理查德·马修·斯托曼（Richard Matthew Stallman RMS，1953-今）</strong> 所写作的GNU通用公共许可证（GNU GPL）是世上最广为采用的自由软件许可证。Copyleft许可证，<strong>具有传染性的许可证</strong>，要求修改项目代码的用户再次分发源码或二进制代码时，必须公布他的相关修改。V3版本与V2类似，但其进一步约束了在某些限制软件更改的硬件上的使用范围。</p>
 <p>该许可证的项目：Linux、Git</p>
 <h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><ul>
-<li>资源<br>申请了腾讯云，IP: 121.5.26.147<br>默认账户ubuntu</li>
+<li>资源<br>申请了腾讯云，IP: 121.5.26.147<br>默认账户ubuntu<br>apt软件包源配置,已经配置，如果新增Docker，需要重新配置：/etc/apt/sources.list</li>
 </ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">eb http://mirrors.tencentyun.com/ubuntu/ bionic main restricted universe multiverse</span><br><span class="line">deb http://mirrors.tencentyun.com/ubuntu/ bionic-security main restricted universe multiverse</span><br><span class="line">deb http://mirrors.tencentyun.com/ubuntu/ bionic-updates main restricted universe multiverse</span><br><span class="line"><span class="comment">#deb http://mirrors.tencentyun.com/ubuntu/ bionic-proposed main restricted universe multiverse</span></span><br><span class="line"><span class="comment">#deb http://mirrors.tencentyun.com/ubuntu/ bionic-backports main restricted universe multiverse</span></span><br><span class="line">deb-src http://mirrors.tencentyun.com/ubuntu/ bionic main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.tencentyun.com/ubuntu/ bionic-security main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.tencentyun.com/ubuntu/ bionic-updates main restricted universe multiverse</span><br><span class="line"><span class="comment">#deb-src http://mirrors.tencentyun.com/ubuntu/ bionic-proposed main restricted universe multiverse</span></span><br><span class="line"><span class="comment">#deb-src http://mirrors.tencentyun.com/ubuntu/ bionic-backports main restricted universe multiverse</span></span><br></pre></td></tr></table></figure>
 <p><strong>云服务器配置</strong></p>
 <ul>
 <li>修改默认ssh连接时间</li>
 </ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span>sudo vim /etc/ssh/sshd_config</span><br><span class="line">ClientAliveInterval 30</span><br><span class="line">ClientAliveCountMax 60</span><br><span class="line"><span class="meta">$</span>service sshd restart</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">sudo vim /etc/ssh/sshd_config</span></span><br><span class="line">ClientAliveInterval 30</span><br><span class="line">ClientAliveCountMax 60</span><br><span class="line"><span class="meta">$</span><span class="bash">service sshd restart</span></span><br></pre></td></tr></table></figure>
 <p><strong>Linux帮助</strong></p>
 <ul>
 <li><p>man<br><code>$man man</code><br>返回MAN(1) ，表示第一章，我们也可以看不同章节；<br><code>#man 7 man</code> //查看第7章节的命令解释；   </p>
